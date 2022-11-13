@@ -17,6 +17,7 @@ import org.eclipse.core.runtime.IPlatformRunnable;
 public class MainApplication implements IPlatformRunnable {
   private Object myLock = new Object();
 
+  //COMMIT TEST
   // The hack with waiting is necessary because when you
   // launch Runtime Workbench in Eclipse, it exists as soon as
   // GanttProject.main() method exits
