@@ -601,7 +601,7 @@ public class GanttProject extends GanttProjectBase implements ResourceView, Gant
         .addWhitespace();
 
     //Added by the ES group incomplete
-    final ArtefactAction deleteArrowsAction; {
+    /*final ArtefactAction deleteArrowsAction; {
       final GPAction taskDeleteAction = getTaskTree().getDeleteAction().asToolbarAction();
       final GPAction resourceDeleteAction = getResourceTree().getDeleteAction().asToolbarAction();
       deleteAction = new ArtefactDeleteAction(new ActiveActionProvider() {
@@ -611,7 +611,7 @@ public class GanttProject extends GanttProjectBase implements ResourceView, Gant
         }
       }, new Action[]{taskDeleteAction, resourceDeleteAction});
     }
-    }
+    }*/
 
     final ArtefactAction newAction;
     {
