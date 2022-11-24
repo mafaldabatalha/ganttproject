@@ -17,7 +17,7 @@ You should have received a copy of the GNU General Public License
 along with GanttProject.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-package net.sourceforge.ganttproject.calendar;
+package net.sourceforge.ganttproject.chart.export.calendar;
 
 import biz.ganttproject.core.calendar.CalendarEvent;
 import biz.ganttproject.core.calendar.CalendarEvent.Type;

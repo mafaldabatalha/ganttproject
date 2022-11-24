@@ -34,6 +34,7 @@ import com.google.common.collect.Lists;
 import net.sourceforge.ganttproject.action.ActiveActionProvider;
 import net.sourceforge.ganttproject.action.ArtefactAction;
 import net.sourceforge.ganttproject.action.ArtefactDeleteAction;
+import net.sourceforge.ganttproject.action.ArtefactDeleteArrowsAction;
 import net.sourceforge.ganttproject.action.ArtefactNewAction;
 import net.sourceforge.ganttproject.action.ArtefactPropertiesAction;
 import net.sourceforge.ganttproject.action.GPAction;
@@ -598,6 +599,19 @@ public class GanttProject extends GanttProjectBase implements ResourceView, Gant
     builder.addButton(new TestGanttRolloverButton(myProjectMenu.getOpenProjectAction().asToolbarAction()))
         .addButton(new TestGanttRolloverButton(myProjectMenu.getSaveProjectAction().asToolbarAction()))
         .addWhitespace();
+
+    //Added by the ES group incomplete
+    final ArtefactAction deleteArrowsAction; {
+      final GPAction taskDeleteAction = getTaskTree().getDeleteAction().asToolbarAction();
+      final GPAction resourceDeleteAction = getResourceTree().getDeleteAction().asToolbarAction();
+      deleteAction = new ArtefactDeleteAction(new ActiveActionProvider() {
+        @Override
+        public AbstractAction getActiveAction() {
+          return getTabs().getSelectedIndex() == UIFacade.GANTT_INDEX ? taskDeleteAction : resourceDeleteAction;
+        }
+      }, new Action[]{taskDeleteAction, resourceDeleteAction});
+    }
+    }
 
     final ArtefactAction newAction;
     {

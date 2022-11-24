@@ -39,7 +39,7 @@ import net.fortuna.ical4j.model.component.VEvent;
 import net.fortuna.ical4j.model.property.RRule;
 import net.fortuna.ical4j.util.CompatibilityHints;
 import net.sourceforge.ganttproject.GPLogger;
-import net.sourceforge.ganttproject.calendar.CalendarEditorPanel;
+import net.sourceforge.ganttproject.chart.export.calendar.CalendarEditorPanel;
 import net.sourceforge.ganttproject.importer.ImporterBase;
 import net.sourceforge.ganttproject.wizard.AbstractWizard;
 import net.sourceforge.ganttproject.wizard.WizardPage;

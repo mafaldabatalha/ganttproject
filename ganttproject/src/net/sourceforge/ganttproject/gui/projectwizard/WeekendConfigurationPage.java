@@ -36,9 +36,8 @@ import javax.swing.JComponent;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
-import net.sourceforge.ganttproject.IGanttProject;
-import net.sourceforge.ganttproject.calendar.CalendarEditorPanel;
-import net.sourceforge.ganttproject.calendar.GPCalendarProvider;
+import net.sourceforge.ganttproject.chart.export.calendar.CalendarEditorPanel;
+import net.sourceforge.ganttproject.chart.export.calendar.GPCalendarProvider;
 import net.sourceforge.ganttproject.gui.UIFacade;
 import net.sourceforge.ganttproject.gui.options.OptionsPageBuilder;
 import net.sourceforge.ganttproject.language.GanttLanguage;
