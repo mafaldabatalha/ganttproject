@@ -34,7 +34,6 @@ import com.google.common.collect.Lists;
 import net.sourceforge.ganttproject.action.ActiveActionProvider;
 import net.sourceforge.ganttproject.action.ArtefactAction;
 import net.sourceforge.ganttproject.action.ArtefactDeleteAction;
-import net.sourceforge.ganttproject.action.ArtefactDeleteArrowsAction;
 import net.sourceforge.ganttproject.action.ArtefactNewAction;
 import net.sourceforge.ganttproject.action.ArtefactPropertiesAction;
 import net.sourceforge.ganttproject.action.GPAction;
