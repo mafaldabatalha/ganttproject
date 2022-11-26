@@ -602,6 +602,7 @@ public class GanttProject extends GanttProjectBase implements ResourceView, Gant
       deleteArrowsAction = new ArtefactDeleteArrowsAction(new ActiveActionProvider() {
         @Override
         public AbstractAction getActiveAction() {
+          //THIS NEEDS TO BE COMPLETED AND CHANGED ACCORDING TO WHAT IS NEEDED
           return getTabs().getSelectedIndex() == UIFacade.GANTT_INDEX ? taskDeleteAction : resourceDeleteAction;
         }
       }, new Action[]{taskDeleteAction, resourceDeleteAction});
