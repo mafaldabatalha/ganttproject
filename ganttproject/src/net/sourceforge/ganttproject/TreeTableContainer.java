@@ -68,6 +68,7 @@ public abstract class TreeTableContainer<ModelObject, TreeTableClass extends GPT
   private GPAction myNewAction;
   private GPAction myPropertiesAction;
   private GPAction myDeleteAction;
+  private GPAction myDeleteArrowsAction;
 
   private class ExpandCollapseAction extends GPAction {
     ExpandCollapseAction() {
@@ -338,6 +339,10 @@ public abstract class TreeTableContainer<ModelObject, TreeTableClass extends GPT
   @Override
   public GPAction getDeleteAction() {
     return myDeleteAction;
+  }
+
+  public GPAction getDeleteArrowsAction() {
+    return myDeleteArrowsAction;
   }
 
   void setArtefactActions(GPAction newAction, GPAction propertiesAction, GPAction deleteAction) {

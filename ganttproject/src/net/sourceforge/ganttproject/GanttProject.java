@@ -31,12 +31,7 @@ import com.beust.jcommander.JCommander;
 import com.beust.jcommander.Parameter;
 import com.google.common.base.Function;
 import com.google.common.collect.Lists;
-import net.sourceforge.ganttproject.action.ActiveActionProvider;
-import net.sourceforge.ganttproject.action.ArtefactAction;
-import net.sourceforge.ganttproject.action.ArtefactDeleteAction;
-import net.sourceforge.ganttproject.action.ArtefactNewAction;
-import net.sourceforge.ganttproject.action.ArtefactPropertiesAction;
-import net.sourceforge.ganttproject.action.GPAction;
+import net.sourceforge.ganttproject.action.*;
 import net.sourceforge.ganttproject.action.edit.EditMenu;
 import net.sourceforge.ganttproject.action.help.HelpMenu;
 import net.sourceforge.ganttproject.action.project.ProjectMenu;
@@ -600,17 +595,17 @@ public class GanttProject extends GanttProjectBase implements ResourceView, Gant
         .addWhitespace();
 
     //Added by the ES group incomplete
-    /*final ArtefactAction deleteArrowsAction; {
+    final ArtefactAction deleteArrowsAction;
+    {
       final GPAction taskDeleteAction = getTaskTree().getDeleteAction().asToolbarAction();
       final GPAction resourceDeleteAction = getResourceTree().getDeleteAction().asToolbarAction();
-      deleteAction = new ArtefactDeleteAction(new ActiveActionProvider() {
+      deleteArrowsAction = new ArtefactDeleteArrowsAction(new ActiveActionProvider() {
         @Override
         public AbstractAction getActiveAction() {
           return getTabs().getSelectedIndex() == UIFacade.GANTT_INDEX ? taskDeleteAction : resourceDeleteAction;
         }
       }, new Action[]{taskDeleteAction, resourceDeleteAction});
     }
-    }*/
 
     final ArtefactAction newAction;
     {
