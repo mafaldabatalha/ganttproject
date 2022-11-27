@@ -9,4 +9,4 @@ Long Method, revisto por Rafael
 Concordo com o code smell e com a solução proposta.
 
 Code Smell : Dead Code
-Concordo com este code smell pela mesma razâo que tambem concordava com o code smell Dead Code achado pelo Bruno, pensando de igual forma que se poderia pensar e implementar uma funcionalidade que viesse a usar o tal método evitando assim eliminá-lo. -Vasco
+Review: Concordo com este code smell pela mesma razâo que tambem concordava com o code smell Dead Code achado pelo Bruno, pensando de igual forma que se poderia pensar e implementar uma funcionalidade que viesse a usar o tal método evitando assim eliminá-lo. -Vasco
