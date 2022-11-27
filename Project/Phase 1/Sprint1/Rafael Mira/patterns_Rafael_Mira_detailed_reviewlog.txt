@@ -3,3 +3,6 @@ Parece-me bem.
 
 Pattern: Iterator (não foi alterado dado que após a review, concordou-se que era um padrão Iterator)
 Review: Não tenho bem a certeza se isto é considerado como iterator pattern (tendo em conta que não está a ser utilizado um iterator). - Mafalda Batalha
+
+Pattern: Template Method
+Revie: Concordo com a observação e com a justificação da mesma. - Gonçalo Cerveira
