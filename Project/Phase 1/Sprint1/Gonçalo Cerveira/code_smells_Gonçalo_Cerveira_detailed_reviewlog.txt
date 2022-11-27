@@ -1,2 +1,7 @@
 Speculative Generality, revisto por Bruno.
 Concordo.
+
+Code smell "Dead Code", revisto por Rafael
+
+Este método está a ser usado por isso não é dead code.
+Está a ser usado na classe abstrata GPCalendarBase.java no método getActivities que, pode ser utilizado pelas suas subClasses.
