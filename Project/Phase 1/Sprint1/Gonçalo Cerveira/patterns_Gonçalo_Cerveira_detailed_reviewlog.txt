@@ -1,3 +1,5 @@
-Pattern "State Pattern", revisto por Rafael
+State Pattern
+Review: Concordo. - Rafael Mira
 
-Concordo.
+Facade
+Review: Concordo, acho que está bem identificado. - Rafael Mira
