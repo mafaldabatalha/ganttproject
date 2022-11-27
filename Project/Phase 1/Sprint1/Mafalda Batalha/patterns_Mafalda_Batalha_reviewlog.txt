@@ -3,3 +3,6 @@ Concordo.
 
 Template Method, revisto por Bruno
 Concordo.
+
+Pattern: Template Method
+Review: Concordo. -Vasco  
