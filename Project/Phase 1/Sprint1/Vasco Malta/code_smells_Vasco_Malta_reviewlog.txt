@@ -5,3 +5,6 @@ Para além das classes/interfaces, a maioria dos seus métodos não têm qualque
 
 Code Smell: Speculative Generality (alterado após review)
 Review: Esta classe é abstrata e daí a razão por trás do método não estar implementado. Muitos desses métodos estão a ser implementados e utilizados posteriormente. - Mafalda Batalha
+
+Code Smell: Data Class
+Review: Concordo. As classes demonstradas apenas manipulam data - Gonçalo Cerveira
