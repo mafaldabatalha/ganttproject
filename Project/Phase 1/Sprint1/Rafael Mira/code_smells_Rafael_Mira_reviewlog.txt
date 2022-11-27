@@ -4,3 +4,7 @@ Talvez a melhor seria interface segregation, para não gerar a implementação d
 
 Code Smell: Speculative Generality 
 Review: Concordo com essa identificação até por eu mesmo ter identificado um code smell de igual tipo pela mesma razão. -Vasco 
+
+Code Smell: Large Class 
+Review: Concordo. Diria apenas para se adicionar uma ideia geral, não muito complexa, para solucionar o problema - Gonçalo Cerveira
+(Corrigido/Feito por Rafael)
