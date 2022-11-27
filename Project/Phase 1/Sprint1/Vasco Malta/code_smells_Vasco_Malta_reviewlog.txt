@@ -1,0 +1,5 @@
+Code smell - comments, Revisto por: Rafael Mira
+
+Concordo. Apenas algumas classes/interfaces estão comentadas e, mesmo as que estão comentadas, contêm informação muito vaga.
+Para além das classes/interfaces, a maioria dos seus métodos não têm qualquer comentário a explicar o que fazem.
+
