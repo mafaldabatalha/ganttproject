@@ -1,1 +1,2 @@
-
+Comments Bruno
+Não concordo. Seria um facade pattern se existisse uma classe que “unia” todas as que identificaste.
