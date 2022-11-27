@@ -3,3 +3,6 @@ Review: Parece-me bem, acho apenas que deveríamos de mudar a forma como a justi
 
 Pattern: Iterator Pattern
 Review: Concordo. -Vasco
+
+Pattern: Iterat Pattern
+Review: Parece-me bem. - Gonçalo Cerveira
