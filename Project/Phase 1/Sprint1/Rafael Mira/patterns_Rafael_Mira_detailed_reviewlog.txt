@@ -1,2 +1,5 @@
 Chain of Responsibility, revisto por Bruno
 Parece-me bem.
+
+Pattern: Iterator (não foi alterado dado que após a review, concordou-se que era um padrão Iterator)
+Review: Não tenho bem a certeza se isto é considerado como iterator pattern (tendo em conta que não está a ser utilizado um iterator).
