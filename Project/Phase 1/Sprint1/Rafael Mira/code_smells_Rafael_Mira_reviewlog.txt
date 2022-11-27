@@ -7,4 +7,4 @@ Review: Concordo com essa identificação até por eu mesmo ter identificado um 
 
 Code Smell: Large Class 
 Review: Concordo. Diria apenas para se adicionar uma ideia geral, não muito complexa, para solucionar o problema - Gonçalo Cerveira
-(Corrigido/Feito por Rafael)
+(Corrigido/Feito posteriormente)
