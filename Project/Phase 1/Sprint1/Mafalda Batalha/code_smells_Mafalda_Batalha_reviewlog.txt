@@ -1,2 +1,6 @@
 Dead Code, revisto por Bruno
 Concordo.
+
+Speculative generality, revisto por Rafael
+Não sendo um caso muito problemático, concordo que ter um switch apenas para uma possibilidade é excessivo.
+Só faz sentido se se estiver a pensar em extensibilidade e nesse caso é speculative generality.
