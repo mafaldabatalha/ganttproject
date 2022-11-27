@@ -1,2 +1,2 @@
-Code pattern: Speculative Generality (foi alterado após review)
+Code Smell: Speculative Generality (foi alterado após review)
 Review: "Não acho que seja code smell porque no contexto da classe em que está a fazer chamada parece fazer sentido." - Mafalda Batalha
