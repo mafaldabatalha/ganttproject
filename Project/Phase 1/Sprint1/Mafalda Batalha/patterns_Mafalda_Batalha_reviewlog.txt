@@ -1,3 +1,5 @@
 Pattern Memento, revisto por Rafael
+Concordo.
 
+Template Method, revisto por Bruno
 Concordo.
