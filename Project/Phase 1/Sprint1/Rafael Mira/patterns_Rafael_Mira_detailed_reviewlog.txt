@@ -1,2 +1,2 @@
-Comments Bruno
+Chain of Responsibility, revisto por Bruno
 Parece-me bem.
