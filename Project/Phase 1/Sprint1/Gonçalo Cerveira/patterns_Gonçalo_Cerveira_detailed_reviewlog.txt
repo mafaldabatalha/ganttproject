@@ -1,1 +1,3 @@
+Pattern "State Pattern", revisto por Rafael
 
+Concordo.
