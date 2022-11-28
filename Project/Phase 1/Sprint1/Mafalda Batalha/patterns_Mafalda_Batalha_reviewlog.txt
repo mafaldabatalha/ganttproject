@@ -6,3 +6,6 @@ Concordo.
 
 Pattern: Template Method
 Review: Concordo. -Vasco  
+
+Pattern: Proxy
+Review: Concordo, nada a acrescentar. - Gonçalo Cerveira
