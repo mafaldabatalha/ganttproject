@@ -325,6 +325,7 @@ public class GanttProject extends GanttProjectBase implements ResourceView, Gant
       mTask.add(taskTree.getNewAction());
       mTask.add(taskTree.getPropertiesAction());
       mTask.add(taskTree.getDeleteAction());
+      mTask.add(taskTree.getDeleteArrowsAction());
       getResourcePanel().setTaskPropertiesAction(taskTree.getPropertiesAction());
       bar.add(mTask);
     }
@@ -595,18 +596,18 @@ public class GanttProject extends GanttProjectBase implements ResourceView, Gant
         .addWhitespace();
 
     //Added by the ES group incomplete
-    final ArtefactAction deleteArrowsAction;
+    /*final ArtefactAction deleteArrowsAction;
     {
-      final GPAction taskDeleteAction = getTaskTree().getDeleteAction().asToolbarAction();
+      final GPAction taskDeleteArrowsAction = getTaskTree().getDeleteArrowsAction().asToolbarAction();
       final GPAction resourceDeleteAction = getResourceTree().getDeleteAction().asToolbarAction();
       deleteArrowsAction = new ArtefactDeleteArrowsAction(new ActiveActionProvider() {
         @Override
         public AbstractAction getActiveAction() {
           //THIS NEEDS TO BE COMPLETED AND CHANGED ACCORDING TO WHAT IS NEEDED
-          return getTabs().getSelectedIndex() == UIFacade.GANTT_INDEX ? taskDeleteAction : resourceDeleteAction;
+          return getTabs().getSelectedIndex() == UIFacade.GANTT_INDEX ? taskDeleteArrowsAction : resourceDeleteAction;
         }
-      }, new Action[]{taskDeleteAction, resourceDeleteAction});
-    }
+      }, new Action[]{taskDeleteArrowsAction, resourceDeleteAction});
+    }*/
 
     final ArtefactAction newAction;
     {
@@ -680,6 +681,7 @@ public class GanttProject extends GanttProjectBase implements ResourceView, Gant
     });
 
     builder.addButton(new TestGanttRolloverButton(deleteAction))
+            .addButton(new TestGanttRolloverButton(deleteAction))
         .addWhitespace()
         .addButton(new TestGanttRolloverButton(propertiesAction))
         .addButton(new TestGanttRolloverButton(getCutAction().asToolbarAction()))
