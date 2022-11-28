@@ -1,0 +1,11 @@
+Pattern Memento, revisto por Rafael
+Concordo.
+
+Template Method, revisto por Bruno
+Concordo.
+
+Pattern: Template Method
+Review: Concordo. -Vasco  
+
+Pattern: Proxy
+Review: Concordo, nada a acrescentar. - Gonçalo Cerveira

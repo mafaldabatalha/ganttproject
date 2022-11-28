@@ -1,0 +1,8 @@
+Code Smell: Speculative Generality (foi alterado após review)
+Review: Não acho que seja code smell porque no contexto da classe em que está a fazer chamada parece fazer sentido. - Mafalda Batalha
+
+Code Smell: Dead Code
+Review: Concordo com os colegas, porém também penso que se poderia pensar e implementar uma funcionalidade que viesse a usar o tal método evitando assim eliminá-lo. - Vasco Malta
+
+Code Smell: Long Method
+Review: Concordo. Diria apenas que uma das possíveis soluções seria adicionar um switch, ou caso tenhas outras, dissesses de maneira mais específica e não tão geral. - Gonçalo Cerveira 
