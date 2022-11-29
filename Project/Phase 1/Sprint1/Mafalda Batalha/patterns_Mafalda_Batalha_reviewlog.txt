@@ -1,11 +1,9 @@
-Pattern Memento, revisto por Rafael
-Concordo.
-
-Template Method, revisto por Bruno
-Concordo.
+Pattern: Memento
+Review: Concordo. - Rafael Mira
 
 Pattern: Template Method
-Review: Concordo. -Vasco  
+Review: Concordo. - Bruno David
+Review: Concordo. - Vasco Malta
 
 Pattern: Proxy
 Review: Concordo, nada a acrescentar. - Gonçalo Cerveira

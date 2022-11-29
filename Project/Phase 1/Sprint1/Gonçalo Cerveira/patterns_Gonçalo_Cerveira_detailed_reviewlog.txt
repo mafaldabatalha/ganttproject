@@ -1,8 +1,8 @@
-State Pattern
+Pattern: State
 Review: Concordo. - Rafael Mira
 
-Facade
+Pattern: Facade
 Review: Concordo, acho que está bem identificado. - Rafael Mira
 
 Pattern: Facade
-Review: Concordo - Vasco
+Review: Concordo - Vasco Malta

@@ -1,7 +1,6 @@
-Code smell - comments, Revisto por: Rafael Mira
-
-Concordo. Apenas algumas classes/interfaces estão comentadas e, mesmo as que estão comentadas, contêm informação muito vaga.
-Para além das classes/interfaces, a maioria dos seus métodos não têm qualquer comentário a explicar o que fazem.
+Code smell: Comments
+Review: Concordo. Apenas algumas classes/interfaces estão comentadas e, mesmo as que estão comentadas, contêm informação muito vaga. - Rafael Mira
+Review: Para além das classes/interfaces, a maioria dos seus métodos não têm qualquer comentário a explicar o que fazem. - Rafael Mira
 
 Code Smell: Speculative Generality (alterado após review)
 Review: Esta classe é abstrata e daí a razão por trás do método não estar implementado. Muitos desses métodos estão a ser implementados e utilizados posteriormente. - Mafalda Batalha
