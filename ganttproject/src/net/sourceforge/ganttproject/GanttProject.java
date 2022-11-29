@@ -691,7 +691,10 @@ public class GanttProject extends GanttProjectBase implements ResourceView, Gant
         .addButton(new TestGanttRolloverButton(getPasteAction().asToolbarAction()))
         .addWhitespace()
         .addButton(new TestGanttRolloverButton(myEditMenu.getUndoAction().asToolbarAction()))
-        .addButton(new TestGanttRolloverButton(myEditMenu.getRedoAction().asToolbarAction()));
+        .addButton(new TestGanttRolloverButton(myEditMenu.getRedoAction().asToolbarAction()))
+            .addWhitespace()
+            .addWhitespace();
+            //.addButton(new TestGanttRolloverButton(printWarning().asToolbarAction()));
 
     JTextField searchBox = getSearchUi().getSearchField();
     //searchBox.setMaximumSize(new Dimension(searchBox.getPreferredSize().width, buttons.get(0).getPreferredSize().height));
@@ -941,9 +944,13 @@ public class GanttProject extends GanttProjectBase implements ResourceView, Gant
     //2. receber, da tarefa, a coleção de dependências
     //myTaskManager.getDependencyCollection();
     //3. fazer unlink para cada dependência da coleção
-    return new TaskUnlinkAction(getTaskManager(), getTaskSelectionManager(), getUIFacade());;
+    return new TaskUnlinkAction(getTaskManager(), getTaskSelectionManager(), getUIFacade());
   }
 
+  //public GPAction printWarning()
+  //{
+    //return myUIFacade.showConfirmationDialog(message, title);
+  //}
 
   public GPAction getCopyAction() {
     return getViewManager().getCopyAction();
