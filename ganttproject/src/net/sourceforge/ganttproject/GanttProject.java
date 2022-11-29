@@ -930,10 +930,8 @@ public class GanttProject extends GanttProjectBase implements ResourceView, Gant
   {
     // PROCESSO QUE EU ACHO QUE É PRECISO FAZER
     //1. receber a tarefa que se encontra selecionada
-    //List<Task> selectedTasks = getTaskSelectionManager().getSelectedTasks();
-    final GPAction unlinkAction = new TaskUnlinkAction(getTaskManager(), getTaskSelectionManager(), getUIFacade());
-    final GPAction taskDeleteArrowsAction = unlinkAction;
-    return unlinkAction;
+    //List<Task> selectedTasks = getTaskSelectionManager().getSelectedTasks()
+    //final GPAction taskDeleteArrowsAction = unlinkAction;
       /*deleteArrowsAction = new ArtefactDeleteArrowsAction(new ActiveActionProvider() {
         @Override
         public AbstractAction getActiveAction() {
@@ -943,6 +941,7 @@ public class GanttProject extends GanttProjectBase implements ResourceView, Gant
     //2. receber, da tarefa, a coleção de dependências
     //myTaskManager.getDependencyCollection();
     //3. fazer unlink para cada dependência da coleção
+    return new TaskUnlinkAction(getTaskManager(), getTaskSelectionManager(), getUIFacade());;
   }
 
 
