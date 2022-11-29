@@ -341,9 +341,9 @@ public abstract class TreeTableContainer<ModelObject, TreeTableClass extends GPT
     return myDeleteAction;
   }
 
-  public GPAction getDeleteArrowsAction() {
+  /*public GPAction getDeleteArrowsAction() {
     return myDeleteArrowsAction;
-  }
+  }*/
 
   void setArtefactActions(GPAction newAction, GPAction propertiesAction, GPAction deleteAction) {
     myNewAction = newAction;

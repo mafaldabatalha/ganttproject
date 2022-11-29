@@ -36,6 +36,7 @@ import net.sourceforge.ganttproject.action.edit.EditMenu;
 import net.sourceforge.ganttproject.action.help.HelpMenu;
 import net.sourceforge.ganttproject.action.project.ProjectMenu;
 import net.sourceforge.ganttproject.action.resource.ResourceActionSet;
+import net.sourceforge.ganttproject.action.task.TaskUnlinkAction;
 import net.sourceforge.ganttproject.action.view.ViewCycleAction;
 import net.sourceforge.ganttproject.action.view.ViewMenu;
 import net.sourceforge.ganttproject.action.zoom.ZoomActionSet;
@@ -71,11 +72,7 @@ import net.sourceforge.ganttproject.resource.HumanResourceManager;
 import net.sourceforge.ganttproject.resource.ResourceEvent;
 import net.sourceforge.ganttproject.resource.ResourceView;
 import net.sourceforge.ganttproject.roles.RoleManager;
-import net.sourceforge.ganttproject.task.CustomColumnsStorage;
-import net.sourceforge.ganttproject.task.TaskContainmentHierarchyFacade;
-import net.sourceforge.ganttproject.task.TaskManager;
-import net.sourceforge.ganttproject.task.TaskManagerConfig;
-import net.sourceforge.ganttproject.task.TaskManagerImpl;
+import net.sourceforge.ganttproject.task.*;
 
 import javax.annotation.Nullable;
 import javax.swing.*;
@@ -325,7 +322,7 @@ public class GanttProject extends GanttProjectBase implements ResourceView, Gant
       mTask.add(taskTree.getNewAction());
       mTask.add(taskTree.getPropertiesAction());
       mTask.add(taskTree.getDeleteAction());
-      mTask.add(taskTree.getDeleteArrowsAction());
+      //mTask.add(taskTree.getDeleteArrowsAction());
       getResourcePanel().setTaskPropertiesAction(taskTree.getPropertiesAction());
       bar.add(mTask);
     }
@@ -596,18 +593,23 @@ public class GanttProject extends GanttProjectBase implements ResourceView, Gant
         .addWhitespace();
 
     //Added by the ES group incomplete
-    /*final ArtefactAction deleteArrowsAction;
-    {
-      final GPAction taskDeleteArrowsAction = getTaskTree().getDeleteArrowsAction().asToolbarAction();
-      final GPAction resourceDeleteAction = getResourceTree().getDeleteAction().asToolbarAction();
-      deleteArrowsAction = new ArtefactDeleteArrowsAction(new ActiveActionProvider() {
+    //NÃO SEI SE É PARA USAR NULL
+    /*GPAction getdeleteArrowsAction() {
+      // PROCESSO QUE EU ACHO QUE É PRECISO FAZER
+      //1. receber a tarefa que se encontra selecionada
+      //List<Task> selectedTasks = getTaskSelectionManager().getSelectedTasks();
+      final GPAction unlinkAction = new TaskUnlinkAction(getTaskManager(), getTaskSelectionManager(), getUIFacade());
+      final GPAction taskDeleteArrowsAction = unlinkAction;
+      return unlinkAction;
+      /*deleteArrowsAction = new ArtefactDeleteArrowsAction(new ActiveActionProvider() {
         @Override
         public AbstractAction getActiveAction() {
-          //THIS NEEDS TO BE COMPLETED AND CHANGED ACCORDING TO WHAT IS NEEDED
-          return getTabs().getSelectedIndex() == UIFacade.GANTT_INDEX ? taskDeleteArrowsAction : resourceDeleteAction;
+          return getTabs().getSelectedIndex() == UIFacade.GANTT_INDEX ? taskDeleteArrowsAction: null;
         }
-      }, new Action[]{taskDeleteArrowsAction, resourceDeleteAction});
-    }*/
+      }*/
+      //2. receber, da tarefa, a coleção de dependências
+      //myTaskManager.getDependencyCollection();
+      //3. fazer unlink para cada dependência da coleção*/
 
     final ArtefactAction newAction;
     {
@@ -681,7 +683,7 @@ public class GanttProject extends GanttProjectBase implements ResourceView, Gant
     });
 
     builder.addButton(new TestGanttRolloverButton(deleteAction))
-            .addButton(new TestGanttRolloverButton(deleteAction))
+           .addButton(new TestGanttRolloverButton(getdeleteArrowsAction().asToolbarAction()))
         .addWhitespace()
         .addButton(new TestGanttRolloverButton(propertiesAction))
         .addButton(new TestGanttRolloverButton(getCutAction().asToolbarAction()))
@@ -923,6 +925,26 @@ public class GanttProject extends GanttProjectBase implements ResourceView, Gant
     }
     return tree;
   }
+
+  public GPAction getdeleteArrowsAction()
+  {
+    // PROCESSO QUE EU ACHO QUE É PRECISO FAZER
+    //1. receber a tarefa que se encontra selecionada
+    //List<Task> selectedTasks = getTaskSelectionManager().getSelectedTasks();
+    final GPAction unlinkAction = new TaskUnlinkAction(getTaskManager(), getTaskSelectionManager(), getUIFacade());
+    final GPAction taskDeleteArrowsAction = unlinkAction;
+    return unlinkAction;
+      /*deleteArrowsAction = new ArtefactDeleteArrowsAction(new ActiveActionProvider() {
+        @Override
+        public AbstractAction getActiveAction() {
+          return getTabs().getSelectedIndex() == UIFacade.GANTT_INDEX ? taskDeleteArrowsAction: null;
+        }
+      }*/
+    //2. receber, da tarefa, a coleção de dependências
+    //myTaskManager.getDependencyCollection();
+    //3. fazer unlink para cada dependência da coleção
+  }
+
 
   public GPAction getCopyAction() {
     return getViewManager().getCopyAction();
