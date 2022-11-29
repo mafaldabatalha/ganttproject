@@ -1,10 +1,10 @@
-Speculative Generality, revisto por Bruno
-Parece-me bem identificado. Diria apenas que talvez é melhor indicar uma solução para o problema que o code smell gera. 
-Talvez a melhor seria interface segregation, para não gerar a implementação de uma interface que tem métodos não necessários.
+Code Smell: Speculative Generality
+Review: Parece-me bem identificado. Diria apenas que talvez é melhor indicar uma solução para o problema que o code smell gera. - Bruno David
+Review: Talvez a melhor seria interface segregation, para não gerar a implementação de uma interface que tem métodos não necessários. - Bruno David
 
 Code Smell: Speculative Generality 
-Review: Concordo com essa identificação até por eu mesmo ter identificado um code smell de igual tipo pela mesma razão. -Vasco 
+Review: Concordo com essa identificação até por eu mesmo ter identificado um code smell de igual tipo pela mesma razão. - Vasco Malta
 
 Code Smell: Large Class 
 Review: Concordo. Diria apenas para se adicionar uma ideia geral, não muito complexa, para solucionar o problema - Gonçalo Cerveira
-(Corrigido/Feito posteriormente)
+Review: Solução escrita após review. - Rafael Mira
