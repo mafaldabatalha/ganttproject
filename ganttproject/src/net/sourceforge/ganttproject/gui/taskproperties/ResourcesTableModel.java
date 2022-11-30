@@ -18,6 +18,7 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  */
 package net.sourceforge.ganttproject.gui.taskproperties;
 
+import net.sourceforge.ganttproject.gui.UIFacade;
 import net.sourceforge.ganttproject.language.GanttLanguage;
 import net.sourceforge.ganttproject.resource.HumanResource;
 import net.sourceforge.ganttproject.roles.Role;
@@ -63,11 +64,14 @@ class ResourcesTableModel extends AbstractTableModel {
 
   private final ResourceAssignmentMutator myMutator;
 
+  private final UIFacade myUIfacade;
+
   private boolean isChanged = false;
 
-  public ResourcesTableModel(ResourceAssignmentCollection assignmentCollection) {
+  public ResourcesTableModel(ResourceAssignmentCollection assignmentCollection, UIFacade uifacade) {
     myAssignments = new ArrayList<ResourceAssignment>(Arrays.asList(assignmentCollection.getAssignments()));
     myMutator = assignmentCollection.createMutator();
+    myUIfacade = uifacade;
   }
 
   @Override
@@ -190,6 +194,7 @@ class ResourcesTableModel extends AbstractTableModel {
     if (value instanceof HumanResource) {
       ResourceAssignment newAssignment = myMutator.addAssignment((HumanResource) value);
       newAssignment.setLoad(100);
+      getUIFacade().showConfirmationDialog("yoyoyoyoyo", "question");
       boolean coord = false;
       if (myAssignments.isEmpty())
         coord = true;
@@ -198,6 +203,10 @@ class ResourcesTableModel extends AbstractTableModel {
       myAssignments.add(newAssignment);
       fireTableRowsInserted(myAssignments.size(), myAssignments.size());
     }
+  }
+
+  private UIFacade getUIFacade() {
+    return myUIfacade;
   }
 
   //Encontrada a tabela dos resources das tasks

@@ -313,7 +313,7 @@ public class GanttTaskPropertiesBean extends JPanel {
 
   /** Construct the resources panel */
   private void constructResourcesPanel() {
-    myAllocationsPanel = new TaskAllocationsPanel(selectedTasks[0], myHumanResourceManager, myRoleManager);
+    myAllocationsPanel = new TaskAllocationsPanel(selectedTasks[0], myHumanResourceManager, myRoleManager, myUIfacade);
     resourcesPanel = myAllocationsPanel.getComponent();
   }
 

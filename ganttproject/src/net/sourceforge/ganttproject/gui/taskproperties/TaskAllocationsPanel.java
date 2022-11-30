@@ -20,6 +20,7 @@ package net.sourceforge.ganttproject.gui.taskproperties;
 
 import biz.ganttproject.core.option.*;
 import net.sourceforge.ganttproject.gui.AbstractTableAndActionsComponent;
+import net.sourceforge.ganttproject.gui.UIFacade;
 import net.sourceforge.ganttproject.gui.UIUtil;
 import net.sourceforge.ganttproject.gui.options.OptionsPageBuilder;
 import net.sourceforge.ganttproject.gui.options.OptionsPageBuilder.BooleanOptionRadioUi;
@@ -46,6 +47,8 @@ public class TaskAllocationsPanel {
   private final HumanResourceManager myHRManager;
   private final RoleManager myRoleManager;
   private final Task myTask;
+
+  private final UIFacade myUIfacade;
   private final DefaultBooleanOption myCostIsCalculated = new DefaultBooleanOption("taskProperties.cost.calculated");
   private final DefaultDoubleOption myCostValue = new DefaultDoubleOption("taskProperties.cost.value") {
 
@@ -60,10 +63,11 @@ public class TaskAllocationsPanel {
 
   private JTable myTable;
 
-  public TaskAllocationsPanel(Task task, HumanResourceManager hrManager, RoleManager roleMgr) {
+  public TaskAllocationsPanel(Task task, HumanResourceManager hrManager, RoleManager roleMgr, UIFacade uifacade) {
     myHRManager = hrManager;
     myRoleManager = roleMgr;
     myTask = task;
+    myUIfacade = uifacade;
   }
 
   private JTable getTable() {
@@ -71,7 +75,7 @@ public class TaskAllocationsPanel {
   }
 
   public JPanel getComponent() {
-    myModel = new ResourcesTableModel(myTask.getAssignmentCollection());
+    myModel = new ResourcesTableModel(myTask.getAssignmentCollection(), myUIfacade);
     myTable = new JTable(myModel);
     UIUtil.setupTableUI(getTable());
     CommonPanel.setupComboBoxEditor(getTable().getColumnModel().getColumn(1), myHRManager.getResources().toArray());
