@@ -48,7 +48,7 @@ public class TaskAllocationsPanel {
   private final RoleManager myRoleManager;
   private final Task myTask;
 
-  private final UIFacade myUIfacade;
+  private final UIFacade myUIFacade;
   private final DefaultBooleanOption myCostIsCalculated = new DefaultBooleanOption("taskProperties.cost.calculated");
   private final DefaultDoubleOption myCostValue = new DefaultDoubleOption("taskProperties.cost.value") {
 
@@ -67,7 +67,7 @@ public class TaskAllocationsPanel {
     myHRManager = hrManager;
     myRoleManager = roleMgr;
     myTask = task;
-    myUIfacade = uifacade;
+    myUIFacade = uifacade;
   }
 
   private JTable getTable() {
@@ -75,7 +75,7 @@ public class TaskAllocationsPanel {
   }
 
   public JPanel getComponent() {
-    myModel = new ResourcesTableModel(myTask.getAssignmentCollection(), myUIfacade);
+    myModel = new ResourcesTableModel(myTask.getAssignmentCollection(), myUIFacade);
     myTable = new JTable(myModel);
     UIUtil.setupTableUI(getTable());
     CommonPanel.setupComboBoxEditor(getTable().getColumnModel().getColumn(1), myHRManager.getResources().toArray());
