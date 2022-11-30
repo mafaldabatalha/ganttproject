@@ -190,7 +190,6 @@ class ResourcesTableModel extends AbstractTableModel {
     if (value instanceof HumanResource) {
       ResourceAssignment newAssignment = myMutator.addAssignment((HumanResource) value);
       newAssignment.setLoad(100);
-
       boolean coord = false;
       if (myAssignments.isEmpty())
         coord = true;
@@ -200,6 +199,8 @@ class ResourcesTableModel extends AbstractTableModel {
       fireTableRowsInserted(myAssignments.size(), myAssignments.size());
     }
   }
+
+  //Encontrada a tabela dos resources das tasks
 
   public List<ResourceAssignment> getResourcesAssignments() {
     return Collections.unmodifiableList(myAssignments);

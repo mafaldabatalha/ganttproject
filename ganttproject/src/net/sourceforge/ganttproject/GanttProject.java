@@ -691,10 +691,7 @@ public class GanttProject extends GanttProjectBase implements ResourceView, Gant
         .addButton(new TestGanttRolloverButton(getPasteAction().asToolbarAction()))
         .addWhitespace()
         .addButton(new TestGanttRolloverButton(myEditMenu.getUndoAction().asToolbarAction()))
-        .addButton(new TestGanttRolloverButton(myEditMenu.getRedoAction().asToolbarAction()))
-            .addWhitespace()
-            .addWhitespace();
-            //.addButton(new TestGanttRolloverButton(printWarning().asToolbarAction()));
+        .addButton(new TestGanttRolloverButton(myEditMenu.getRedoAction().asToolbarAction()));
 
     JTextField searchBox = getSearchUi().getSearchField();
     //searchBox.setMaximumSize(new Dimension(searchBox.getPreferredSize().width, buttons.get(0).getPreferredSize().height));
@@ -947,10 +944,6 @@ public class GanttProject extends GanttProjectBase implements ResourceView, Gant
     return new TaskUnlinkAction(getTaskManager(), getTaskSelectionManager(), getUIFacade());
   }
 
-  //public GPAction printWarning()
-  //{
-    //return myUIFacade.showConfirmationDialog(message, title);
-  //}
 
   public GPAction getCopyAction() {
     return getViewManager().getCopyAction();
