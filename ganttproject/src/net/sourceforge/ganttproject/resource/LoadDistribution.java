@@ -21,7 +21,7 @@ import net.sourceforge.ganttproject.task.Task;
 import net.sourceforge.ganttproject.task.TaskActivity;
 
 /**
- * Represents load of of one particular resource in the given time range
+ * Represents load of one particular resource in the given time range
  */
 public class LoadDistribution {
   public static class Load {

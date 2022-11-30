@@ -25,6 +25,7 @@ import net.sourceforge.ganttproject.roles.Role;
 import net.sourceforge.ganttproject.task.ResourceAssignment;
 import net.sourceforge.ganttproject.task.ResourceAssignmentCollection;
 import net.sourceforge.ganttproject.task.ResourceAssignmentMutator;
+import net.sourceforge.ganttproject.gui.UIFacade.Choice;
 
 import javax.swing.table.AbstractTableModel;
 import java.util.ArrayList;
@@ -194,14 +195,18 @@ class ResourcesTableModel extends AbstractTableModel {
     if (value instanceof HumanResource) {
       ResourceAssignment newAssignment = myMutator.addAssignment((HumanResource) value);
       newAssignment.setLoad(100);
-      getUIFacade().showConfirmationDialog("yoyoyoyoyo", "question");
+      Choice choice = getUIFacade().showConfirmationDialog("yoyoyoyoyo", "question");
       boolean coord = false;
       if (myAssignments.isEmpty())
         coord = true;
       newAssignment.setCoordinator(coord);
       newAssignment.setRoleForAssignment(newAssignment.getResource().getRole());
-      myAssignments.add(newAssignment);
-      fireTableRowsInserted(myAssignments.size(), myAssignments.size());
+      if(choice == Choice.YES){
+        myAssignments.add(newAssignment);
+        fireTableRowsInserted(myAssignments.size(), myAssignments.size());
+      }
+      //myAssignments.add(newAssignment);
+      //fireTableRowsInserted(myAssignments.size(), myAssignments.size());
     }
   }
 
