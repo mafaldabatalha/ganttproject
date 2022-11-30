@@ -202,6 +202,8 @@ class ResourcesTableModel extends AbstractTableModel {
     return humanResource.datasSobrepostas(start,end);
   }
 
+  final GanttLanguage i18n = GanttLanguage.getInstance();
+
   private void createAssignment(Object value) {
     if (value instanceof HumanResource) {
       HumanResource hResource = (HumanResource) value;
@@ -210,7 +212,7 @@ class ResourcesTableModel extends AbstractTableModel {
 
       Choice choice = Choice.YES;
       if(datasSobrepostas(newAssignment)) {
-        Choice  result = getUIFacade().showConfirmationDialog("yoyoyoyoyo", "question");
+        Choice result = getUIFacade().showConfirmationDialog("Sobrecarga de Tarefas", i18n.getText("warning"));
         choice = result;
       }
 
@@ -223,8 +225,6 @@ class ResourcesTableModel extends AbstractTableModel {
         myAssignments.add(newAssignment);
         fireTableRowsInserted(myAssignments.size(), myAssignments.size());
       }
-      //myAssignments.add(newAssignment);
-      //fireTableRowsInserted(myAssignments.size(), myAssignments.size());
     }
   }
 
