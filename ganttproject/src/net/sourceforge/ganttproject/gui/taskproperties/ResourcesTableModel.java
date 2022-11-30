@@ -203,6 +203,8 @@ class ResourcesTableModel extends AbstractTableModel {
   }
 
   final GanttLanguage i18n = GanttLanguage.getInstance();
+  final String msgOverload = "Sobrecarga de Tarefas! O recursso ja esta colocado noutra tarefa, no mesmo periodo de tempo. " +
+                              "Quer prosseguir com a atribuicao da tarefa?";
 
   private void createAssignment(Object value) {
     if (value instanceof HumanResource) {
@@ -212,7 +214,7 @@ class ResourcesTableModel extends AbstractTableModel {
 
       Choice choice = Choice.YES;
       if(datasSobrepostas(newAssignment)) {
-        Choice result = getUIFacade().showConfirmationDialog("Sobrecarga de Tarefas", i18n.getText("warning"));
+        Choice result = getUIFacade().showConfirmationDialog(msgOverload, i18n.getText("warning"));
         choice = result;
       }
 

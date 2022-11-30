@@ -38,7 +38,6 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
-import java.util.Date;
 
 /**
  * @author barmeier
@@ -237,7 +236,10 @@ public class HumanResource implements CustomPropertyHolder {
       GanttCalendar taskStart = task.getStart();
       GanttCalendar taskEnd = task.getStart();
 
-      if(startToCompare.after(taskStart) && startToCompare.before(taskEnd) || endToCompare.after(taskStart) && endToCompare.before(taskEnd) || startToCompare.equals(taskStart) || startToCompare.equals(taskEnd) || endToCompare.equals(taskStart) || endToCompare.equals(taskEnd))
+      if(startToCompare.after(taskStart) && startToCompare.before(taskEnd)              //
+              || endToCompare.after(taskStart) && endToCompare.before(taskEnd)
+              || startToCompare.equals(taskStart) || startToCompare.equals(taskEnd)
+              || endToCompare.equals(taskStart) || endToCompare.equals(taskEnd))
         return true;
     }
     return false;
