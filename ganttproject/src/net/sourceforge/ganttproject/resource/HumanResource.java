@@ -236,6 +236,9 @@ public class HumanResource implements CustomPropertyHolder {
       Task task = next.getTask();
       GanttCalendar taskStart = task.getStart();
       GanttCalendar taskEnd = task.getStart();
+
+      if(startToCompare.after(taskStart) && startToCompare.before(taskEnd) || endToCompare.after(taskStart) && endToCompare.before(taskEnd) || startToCompare.equals(taskStart) || startToCompare.equals(taskEnd) || endToCompare.equals(taskStart) || endToCompare.equals(taskEnd))
+        return true;
     }
     return false;
   }

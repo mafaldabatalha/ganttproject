@@ -208,7 +208,12 @@ class ResourcesTableModel extends AbstractTableModel {
       ResourceAssignment newAssignment = myMutator.addAssignment(hResource);
       newAssignment.setLoad(100);
 
-      Choice choice = getUIFacade().showConfirmationDialog("yoyoyoyoyo", "question");
+      Choice choice = Choice.YES;
+      if(datasSobrepostas(newAssignment)) {
+        Choice  result = getUIFacade().showConfirmationDialog("yoyoyoyoyo", "question");
+        choice = result;
+      }
+
       boolean coord = false;
       if (myAssignments.isEmpty())
         coord = true;
