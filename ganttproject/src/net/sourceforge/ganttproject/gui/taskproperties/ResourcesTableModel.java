@@ -18,6 +18,7 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  */
 package net.sourceforge.ganttproject.gui.taskproperties;
 
+import biz.ganttproject.core.time.GanttCalendar;
 import net.sourceforge.ganttproject.gui.UIFacade;
 import net.sourceforge.ganttproject.language.GanttLanguage;
 import net.sourceforge.ganttproject.resource.HumanResource;
@@ -26,12 +27,14 @@ import net.sourceforge.ganttproject.task.ResourceAssignment;
 import net.sourceforge.ganttproject.task.ResourceAssignmentCollection;
 import net.sourceforge.ganttproject.task.ResourceAssignmentMutator;
 import net.sourceforge.ganttproject.gui.UIFacade.Choice;
+import net.sourceforge.ganttproject.task.Task;
 
 import javax.swing.table.AbstractTableModel;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
+import java.util.Date;
 
 /**
  * Table model of a table of resources assigned to a task.
@@ -191,10 +194,20 @@ class ResourcesTableModel extends AbstractTableModel {
     }
   }
 
+  private boolean datasSobrepostas(ResourceAssignment assignment) {
+    Task task = assignment.getTask();
+    GanttCalendar start = task.getStart();
+    GanttCalendar end = task.getEnd();
+    HumanResource humanResource = assignment.getResource();
+    return humanResource.datasSobrepostas(start,end);
+  }
+
   private void createAssignment(Object value) {
     if (value instanceof HumanResource) {
-      ResourceAssignment newAssignment = myMutator.addAssignment((HumanResource) value);
+      HumanResource hResource = (HumanResource) value;
+      ResourceAssignment newAssignment = myMutator.addAssignment(hResource);
       newAssignment.setLoad(100);
+
       Choice choice = getUIFacade().showConfirmationDialog("yoyoyoyoyo", "question");
       boolean coord = false;
       if (myAssignments.isEmpty())

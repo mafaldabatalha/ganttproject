@@ -19,6 +19,7 @@ along with GanttProject.  If not, see <http://www.gnu.org/licenses/>.
 package net.sourceforge.ganttproject.resource;
 
 import biz.ganttproject.core.calendar.GanttDaysOff;
+import biz.ganttproject.core.time.GanttCalendar;
 import com.google.common.base.Strings;
 import net.sourceforge.ganttproject.CustomProperty;
 import net.sourceforge.ganttproject.CustomPropertyDefinition;
@@ -35,7 +36,9 @@ import javax.swing.*;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Iterator;
 import java.util.List;
+import java.util.Date;
 
 /**
  * @author barmeier
@@ -218,6 +221,23 @@ public class HumanResource implements CustomPropertyHolder {
 
   public ResourceAssignment[] getAssignments() {
     return myAssignments.toArray(new ResourceAssignment[0]);
+  }
+
+  /**
+   *
+   * @param startToCompare - data de inicio da tarefa
+   * @param endToCompare - data de fim da tarefa
+   * @return - <code> true </code> se existem datas sobrepostas, <code> false </code> caso contrário
+   */
+  public boolean datasSobrepostas(GanttCalendar startToCompare, GanttCalendar endToCompare) {
+    Iterator<ResourceAssignment> it = myAssignments.iterator();
+    while(it.hasNext()) {
+      ResourceAssignment next = it.next();
+      Task task = next.getTask();
+      GanttCalendar taskStart = task.getStart();
+      GanttCalendar taskEnd = task.getStart();
+    }
+    return false;
   }
 
   public HumanResource unpluggedClone() {
