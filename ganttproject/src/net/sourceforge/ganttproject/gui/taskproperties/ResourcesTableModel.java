@@ -63,6 +63,8 @@ class ResourcesTableModel extends AbstractTableModel {
         }
     }
 
+    private List<Integer> names;
+
     private final List<ResourceAssignment> myAssignments;
 
     private final ResourceAssignmentMutator myMutator;
@@ -75,6 +77,7 @@ class ResourcesTableModel extends AbstractTableModel {
         myAssignments = new ArrayList<ResourceAssignment>(Arrays.asList(assignmentCollection.getAssignments()));
         myMutator = assignmentCollection.createMutator();
         myUIfacade = uifacade;
+        names = new ArrayList<Integer>();
     }
 
     @Override
@@ -207,6 +210,11 @@ class ResourcesTableModel extends AbstractTableModel {
         HumanResource humanResource = assignment.getResource();
         return humanResource.overlappingDates(start, end);
     }
+    private boolean sameTask(ResourceAssignment assignment) {
+        Task task = assignment.getTask();
+        HumanResource humanResource = assignment.getResource();
+        return humanResource.sameTask(task);
+    }
 
     private final GanttLanguage i18n = GanttLanguage.getInstance();
 
@@ -219,6 +227,8 @@ class ResourcesTableModel extends AbstractTableModel {
      */
     private final String OVERLOAD_MSG_PLURAL = "Sobrecarga de Tarefas! %s ja esta atribuido a %d tarefas neste periodo de tempo. Quer prosseguir com a atribuicao da tarefa?";
 
+    private final String SAME_PERSON_SAME_TASK = "Esta pessoa ja esta designada na tarefa, caso queira acrescentar designar mais funcoes da tarefa aumente a carga da pessoa na tabela.";
+
     private void createAssignment(Object value) {
         if (value instanceof HumanResource) {
             HumanResource humanResource = (HumanResource) value;
@@ -226,14 +236,20 @@ class ResourcesTableModel extends AbstractTableModel {
             newAssignment.setLoad(100);
 
             Choice choice = Choice.YES;
-            int numberOfOverlappingDates = overlappingDates(newAssignment);
-            if (numberOfOverlappingDates != 0) {
-                String msgWithResourceName;
-                if (numberOfOverlappingDates == 1)
-                    msgWithResourceName = String.format(OVERLOAD_MSG_SINGULAR, humanResource.getName(), numberOfOverlappingDates);
-                else
-                    msgWithResourceName = String.format(OVERLOAD_MSG_PLURAL, humanResource.getName(), numberOfOverlappingDates);
-                choice = getUIFacade().showConfirmationDialog(msgWithResourceName, i18n.getText("warning"));
+            if(!sameTask(newAssignment)){
+                int numberOfOverlappingDates = overlappingDates(newAssignment);
+                if (numberOfOverlappingDates != 0) {
+                    String msgWithResourceName;
+                    if (numberOfOverlappingDates == 1)
+                        msgWithResourceName = String.format(OVERLOAD_MSG_SINGULAR, humanResource.getName(), numberOfOverlappingDates);
+                    else
+                        msgWithResourceName = String.format(OVERLOAD_MSG_PLURAL, humanResource.getName(), numberOfOverlappingDates);
+                    choice = getUIFacade().showConfirmationDialog(msgWithResourceName, i18n.getText("warning"));
+                }
+            }
+           else {
+                choice = Choice.NO;
+                getUIFacade().showConfirmationDialog(SAME_PERSON_SAME_TASK, i18n.getText("warning"));
             }
 
             if (choice == Choice.YES) {
