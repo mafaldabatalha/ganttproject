@@ -63,8 +63,6 @@ class ResourcesTableModel extends AbstractTableModel {
         }
     }
 
-    private List<Integer> names;
-
     private final List<ResourceAssignment> myAssignments;
 
     private final ResourceAssignmentMutator myMutator;
@@ -77,7 +75,6 @@ class ResourcesTableModel extends AbstractTableModel {
         myAssignments = new ArrayList<ResourceAssignment>(Arrays.asList(assignmentCollection.getAssignments()));
         myMutator = assignmentCollection.createMutator();
         myUIfacade = uifacade;
-        names = new ArrayList<Integer>();
     }
 
     @Override
