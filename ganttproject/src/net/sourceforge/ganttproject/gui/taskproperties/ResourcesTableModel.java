@@ -207,6 +207,13 @@ class ResourcesTableModel extends AbstractTableModel {
         HumanResource humanResource = assignment.getResource();
         return humanResource.overlappingDates(start, end);
     }
+
+    /**
+     * Auxiliar funciton that verifies if the HumanResource already is in the task.
+     *
+     * @param assignment - assignment to verify
+     * @return - Boolean, True if task is already in the humanResource system, False if it does not.
+     */
     private boolean sameTask(ResourceAssignment assignment) {
         Task task = assignment.getTask();
         HumanResource humanResource = assignment.getResource();

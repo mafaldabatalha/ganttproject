@@ -249,6 +249,12 @@ public class HumanResource implements CustomPropertyHolder {
     return overloadedTasks;
   }
 
+  /**
+   * Funciton that verifies if the task is already in the humanResource system.
+   *
+   * @param task - task to verify
+   * @return - Boolean, True if task is already in the humanResource system, False if it does not.
+   */
   public boolean sameTask(Task task){
     Iterator<ResourceAssignment> it = myAssignments.iterator();
     Integer taskId = task.getTaskID();
