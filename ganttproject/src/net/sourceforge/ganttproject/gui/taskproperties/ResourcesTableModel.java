@@ -231,6 +231,9 @@ class ResourcesTableModel extends AbstractTableModel {
      */
     private final String OVERLOAD_MSG_PLURAL = "Sobrecarga de Tarefas! %s ja esta atribuido a %d tarefas neste periodo de tempo. Quer prosseguir com a atribuicao da tarefa?";
 
+    /**
+     * Message that shows when that person is already in that task.
+     */
     private final String SAME_PERSON_SAME_TASK = "Esta pessoa ja esta designada na tarefa, caso queira acrescentar designar mais funcoes da tarefa aumente a carga da pessoa na tabela.";
 
     private void createAssignment(Object value) {

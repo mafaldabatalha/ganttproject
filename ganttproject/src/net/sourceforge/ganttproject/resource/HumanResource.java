@@ -237,7 +237,7 @@ public class HumanResource implements CustomPropertyHolder {
     while (it.hasNext()) {
       ResourceAssignment next = it.next();
       Task task = next.getTask();
-      if (areDatesInConflit(startDate,endDate, task))
+      if (areDatesInConflict(startDate,endDate, task))
         overloadedTasks++;
     }
     return overloadedTasks;
@@ -253,7 +253,7 @@ public class HumanResource implements CustomPropertyHolder {
    * @return - devolve <code> true </code> se existirem datas sobrepostas, ou
    *         devolve <code> false </code> caso contrario.
    */
-  private boolean areDatesInConflit(GanttCalendar startDate, GanttCalendar endDate, Task task) {
+  private boolean areDatesInConflict(GanttCalendar startDate, GanttCalendar endDate, Task task) {
     GanttCalendar taskStartDate = task.getStart();
     GanttCalendar taskEndDate = task.getEnd();
 
