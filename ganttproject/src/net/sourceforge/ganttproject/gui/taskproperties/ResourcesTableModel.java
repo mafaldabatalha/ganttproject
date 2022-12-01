@@ -227,6 +227,9 @@ class ResourcesTableModel extends AbstractTableModel {
         myAssignments.add(newAssignment);
         fireTableRowsInserted(myAssignments.size(), myAssignments.size());
       }
+      else {
+        myMutator.deleteAssignment(hResource);
+      }
     }
   }
 
