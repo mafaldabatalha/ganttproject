@@ -1,5 +1,5 @@
-Facade Pattern, revisto por Bruno
-Não concordo. Seria um facade pattern se existisse uma classe que “unia” todas as que identificaste.
+Pattern: Facade
+Não concordo. Seria um facade pattern se existisse uma classe que “unia” todas as que identificaste. - Bruno David
 
 Pattern: Singleton (a explicação foi alterada após a review)
 Review: Não tenho a certeza se é de facto um singleton pattern, de qualquer forma penso que a explicação deve ser modificada. - Mafalda Batalha
