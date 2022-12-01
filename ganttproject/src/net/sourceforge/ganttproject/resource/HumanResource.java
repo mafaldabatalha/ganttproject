@@ -237,16 +237,24 @@ public class HumanResource implements CustomPropertyHolder {
     while (it.hasNext()) {
       ResourceAssignment next = it.next();
       Task task = next.getTask();
-      GanttCalendar taskStartDate = task.getStart();
-      GanttCalendar taskEndDate = task.getStart();
-
-      if (startDate.after(taskStartDate) && startDate.before(taskEndDate)
-              || endDate.after(taskStartDate) && endDate.before(taskEndDate)
-              || startDate.equals(taskStartDate) || startDate.equals(taskEndDate)
-              || endDate.equals(taskStartDate) || endDate.equals(taskEndDate))
+      if (areDatesInConflit(startDate,endDate, task))
         overloadedTasks++;
     }
     return overloadedTasks;
+  }
+
+  /**
+   * Metodo auxiliar ao metodo overlappingDates. Testa se as datas de uma tareda sao
+   * compativeis com as datas de outra tareda ja existente.
+   *
+   * @param startDate - data de inicio
+   * @param endDate - data de partida
+   * @param task - tarefa a ser comparada
+   * @return - devolve <code> true </code> se existirem datas sobrepostas, ou
+   *         devolve <code> false </code> caso contrario.
+   */
+  private boolean areDatesInConflit(GanttCalendar startDate, GanttCalendar endDate, Task task) {
+    return !(startDate.after(task.getEnd()) || task.getStart().after(endDate));
   }
 
   /**
