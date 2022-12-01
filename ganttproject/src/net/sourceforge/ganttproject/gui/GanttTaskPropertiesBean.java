@@ -65,7 +65,7 @@ public class GanttTaskPropertiesBean extends JPanel {
   private final GPAction mySetDefaultColorAction = new GPAction("defaultColor") {
     @Override
     public void actionPerformed(ActionEvent e) {
-      myTaskColorOption.setValue(myUIfacade.getGanttChart().getTaskDefaultColorOption().getValue());
+      myTaskColorOption.setValue(myUIFacade.getGanttChart().getTaskDefaultColorOption().getValue());
     }
   };
   private JXDatePicker myEarliestBeginDatePicker;
@@ -151,7 +151,7 @@ public class GanttTaskPropertiesBean extends JPanel {
   private Task myUnpluggedClone;
   private final TaskManager myTaskManager;
   private final IGanttProject myProject;
-  private final UIFacade myUIfacade;
+  private final UIFacade myUIFacade;
 
   private JCheckBox myShowInTimeline;
   private AbstractAction myOnEarliestBeginToggle;
@@ -164,7 +164,7 @@ public class GanttTaskPropertiesBean extends JPanel {
     myRoleManager = project.getRoleManager();
     myTaskManager = project.getTaskManager();
     myProject = project;
-    myUIfacade = uifacade;
+    myUIFacade = uifacade;
     init();
     setSelectedTaskProperties();
   }
@@ -218,7 +218,7 @@ public class GanttTaskPropertiesBean extends JPanel {
     propertiesPanel.add(shapeComboBox);
 
     OptionsPageBuilder builder = new OptionsPageBuilder(GanttTaskPropertiesBean.this, OptionsPageBuilder.TWO_COLUMN_LAYOUT);
-    builder.setUiFacade(myUIfacade);
+    builder.setUiFacade(myUIFacade);
     JPanel colorBox = new JPanel(new BorderLayout(5, 0));
     colorBox.add(builder.createColorComponent(myTaskColorOption).getJComponent(), BorderLayout.WEST);
     //colorBox.add(Box.createHorizontalStrut(5));
@@ -300,8 +300,8 @@ public class GanttTaskPropertiesBean extends JPanel {
   }
 
   private void constructCustomColumnPanel() {
-    myCustomColumnPanel = new CustomColumnsPanel(myProject.getTaskCustomColumnManager(), myUIfacade,
-        selectedTasks[0].getCustomValues(), myUIfacade.getTaskTree().getVisibleFields());
+    myCustomColumnPanel = new CustomColumnsPanel(myProject.getTaskCustomColumnManager(), myUIFacade,
+        selectedTasks[0].getCustomValues(), myUIFacade.getTaskTree().getVisibleFields());
   }
 
   /** Construct the predecessors tabbed pane */
@@ -313,7 +313,7 @@ public class GanttTaskPropertiesBean extends JPanel {
 
   /** Construct the resources panel */
   private void constructResourcesPanel() {
-    myAllocationsPanel = new TaskAllocationsPanel(selectedTasks[0], myHumanResourceManager, myRoleManager, myUIfacade);
+    myAllocationsPanel = new TaskAllocationsPanel(selectedTasks[0], myHumanResourceManager, myRoleManager, myUIFacade);
     resourcesPanel = myAllocationsPanel.getComponent();
   }
 
@@ -437,9 +437,9 @@ public class GanttTaskPropertiesBean extends JPanel {
       myCustomColumnPanel.commit();
 
       if (!myShowInTimeline.isSelected()) {
-        myUIfacade.getCurrentTaskView().getTimelineTasks().remove(selectedTasks[i]);
+        myUIFacade.getCurrentTaskView().getTimelineTasks().remove(selectedTasks[i]);
       } else {
-        myUIfacade.getCurrentTaskView().getTimelineTasks().add(selectedTasks[i]);
+        myUIFacade.getCurrentTaskView().getTimelineTasks().add(selectedTasks[i]);
       }
     }
   }
@@ -487,7 +487,7 @@ public class GanttTaskPropertiesBean extends JPanel {
 
     noteAreaNotes.setText(originalNotes);
     myTaskColorOption.setValue(selectedTasks[0].getColor());
-    myShowInTimeline.setSelected(myUIfacade.getCurrentTaskView().getTimelineTasks().contains(selectedTasks[0]));
+    myShowInTimeline.setSelected(myUIFacade.getCurrentTaskView().getTimelineTasks().contains(selectedTasks[0]));
   }
 
   private boolean isSupertask() {

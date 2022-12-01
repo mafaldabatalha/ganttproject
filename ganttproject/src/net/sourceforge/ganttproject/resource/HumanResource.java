@@ -76,7 +76,9 @@ public class HumanResource implements CustomPropertyHolder {
     this("", -1, manager);
   }
 
-  /** Creates a new instance of HumanResource */
+  /**
+   * Creates a new instance of HumanResource
+   */
   public HumanResource(String name, int id, HumanResourceManager manager) {
     this.id = id;
     this.name = name;
@@ -88,7 +90,7 @@ public class HumanResource implements CustomPropertyHolder {
     areEventsEnabled = false;
     setId(-1);
     String newName = GanttLanguage.getInstance().formatText("resource.copy.prefix",
-        GanttLanguage.getInstance().getText("copy2"), copy.getName());
+            GanttLanguage.getInstance().getText("copy2"), copy.getName());
     setName(newName);
     setDescription(copy.getDescription());
     setMail(copy.getMail());
@@ -223,23 +225,37 @@ public class HumanResource implements CustomPropertyHolder {
   }
 
   /**
+   * Retorna o numero de tarefas em que o recurso participa e que estão sobrepostas ao intervalo [startDate, endDate].
    *
-   * @param startToCompare - data de inicio da tarefa
-   * @param endToCompare - data de fim da tarefa
-   * @return - <code> true </code> se existem datas sobrepostas, <code> false </code> caso contrário
+   * @param startDate - data de inicio
+   * @param endDate   - data de fim
+   * @return - Retorna o numero de tarefas em que o recurso participa e que estão sobrepostas ao intervalo [startDate, endDate].
    */
-  public boolean datasSobrepostas(GanttCalendar startToCompare, GanttCalendar endToCompare) {
+  public int overlappingDates(GanttCalendar startDate, GanttCalendar endDate) {
     Iterator<ResourceAssignment> it = myAssignments.iterator();
-    while(it.hasNext()) {
+    int overloadedTasks = 0;
+    while (it.hasNext()) {
       ResourceAssignment next = it.next();
       Task task = next.getTask();
-      GanttCalendar taskStart = task.getStart();
-      GanttCalendar taskEnd = task.getStart();
+      GanttCalendar taskStartDate = task.getStart();
+      GanttCalendar taskEndDate = task.getStart();
 
-      if(startToCompare.after(taskStart) && startToCompare.before(taskEnd)              //
-              || endToCompare.after(taskStart) && endToCompare.before(taskEnd)
-              || startToCompare.equals(taskStart) || startToCompare.equals(taskEnd)
-              || endToCompare.equals(taskStart) || endToCompare.equals(taskEnd))
+      if (startDate.after(taskStartDate) && startDate.before(taskEndDate)
+              || endDate.after(taskStartDate) && endDate.before(taskEndDate)
+              || startDate.equals(taskStartDate) || startDate.equals(taskEndDate)
+              || endDate.equals(taskStartDate) || endDate.equals(taskEndDate))
+        overloadedTasks++;
+    }
+    return overloadedTasks;
+  }
+
+  public boolean sameTask(Task task){
+    Iterator<ResourceAssignment> it = myAssignments.iterator();
+    Integer taskId = task.getTaskID();
+
+    while (it.hasNext()) {
+      ResourceAssignment next = it.next();
+      if(next.getTask().getTaskID() == taskId)
         return true;
     }
     return false;
@@ -269,7 +285,7 @@ public class HumanResource implements CustomPropertyHolder {
   @Override
   public CustomProperty addCustomProperty(CustomPropertyDefinition definition, String valueAsString) {
     final CustomPropertyDefinition stubDefinition = CustomPropertyManager.PropertyTypeEncoder.decodeTypeAndDefaultValue(
-        definition.getTypeAsString(), valueAsString);
+            definition.getTypeAsString(), valueAsString);
     setCustomField(definition, stubDefinition.getDefaultValue());
     return new CustomPropertyImpl(definition, stubDefinition.getDefaultValue());
   }
@@ -379,7 +395,9 @@ public class HumanResource implements CustomPropertyHolder {
       HumanResource.this.fireAssignmentChanged();
     }
 
-    /** Removes all related assignments */
+    /**
+     * Removes all related assignments
+     */
     @Override
     public void delete() {
       HumanResource.this.myAssignments.remove(this);
