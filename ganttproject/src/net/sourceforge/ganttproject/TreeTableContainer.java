@@ -68,7 +68,6 @@ public abstract class TreeTableContainer<ModelObject, TreeTableClass extends GPT
   private GPAction myNewAction;
   private GPAction myPropertiesAction;
   private GPAction myDeleteAction;
-  private GPAction myDeleteArrowsAction;
 
   private class ExpandCollapseAction extends GPAction {
     ExpandCollapseAction() {

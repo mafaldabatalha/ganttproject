@@ -547,9 +547,8 @@ public class GanttTree2 extends TreeTableContainer<Task, GanttTreeTable, GanttTr
   @Override
   public void addToolbarActions(ToolbarBuilder builder) {
     builder.addButton(myUnindentAction.asToolbarAction()).addButton(myIndentAction.asToolbarAction())
-        .addButton(myMoveUpAction.asToolbarAction()).addButton(myMoveDownAction.asToolbarAction())
-        //.addButton(myLinkTasksAction.asToolbarAction()).addButton(myUnlinkTasksAction.asToolbarAction())
-    ;
+        .addButton(myMoveUpAction.asToolbarAction()).addButton(myMoveDownAction.asToolbarAction());
+        //.addButton(myLinkTasksAction.asToolbarAction()).addButton(myUnlinkTasksAction.asToolbarAction());
   }
 
   @Override

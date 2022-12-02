@@ -323,7 +323,6 @@ public class GanttProject extends GanttProjectBase implements ResourceView, Gant
       mTask.add(taskTree.getNewAction());
       mTask.add(taskTree.getPropertiesAction());
       mTask.add(taskTree.getDeleteAction());
-      //mTask.add(taskTree.getDeleteArrowsAction());
       getResourcePanel().setTaskPropertiesAction(taskTree.getPropertiesAction());
       bar.add(mTask);
     }
@@ -593,25 +592,6 @@ public class GanttProject extends GanttProjectBase implements ResourceView, Gant
         .addButton(new TestGanttRolloverButton(myProjectMenu.getSaveProjectAction().asToolbarAction()))
         .addWhitespace();
 
-    //Added by the ES group incomplete
-    //NÃO SEI SE É PARA USAR NULL
-    /*GPAction getdeleteArrowsAction() {
-      // PROCESSO QUE EU ACHO QUE É PRECISO FAZER
-      //1. receber a tarefa que se encontra selecionada
-      //List<Task> selectedTasks = getTaskSelectionManager().getSelectedTasks();
-      final GPAction unlinkAction = new TaskUnlinkAction(getTaskManager(), getTaskSelectionManager(), getUIFacade());
-      final GPAction taskDeleteArrowsAction = unlinkAction;
-      return unlinkAction;
-      /*deleteArrowsAction = new ArtefactDeleteArrowsAction(new ActiveActionProvider() {
-        @Override
-        public AbstractAction getActiveAction() {
-          return getTabs().getSelectedIndex() == UIFacade.GANTT_INDEX ? taskDeleteArrowsAction: null;
-        }
-      }*/
-      //2. receber, da tarefa, a coleção de dependências
-      //myTaskManager.getDependencyCollection();
-      //3. fazer unlink para cada dependência da coleção*/
-
     final ArtefactAction newAction;
     {
       final GPAction taskNewAction = getTaskTree().getNewAction().asToolbarAction();
@@ -685,6 +665,7 @@ public class GanttProject extends GanttProjectBase implements ResourceView, Gant
 
     builder.addButton(new TestGanttRolloverButton(deleteAction))
             .addWhitespace()
+            //ADICIONADO PELO GRUPO
             .addButton(new TestGanttRolloverButton(getNewArrowsAction().asToolbarAction()))
             .addButton(new TestGanttRolloverButton(getDeleteArrowsAction().asToolbarAction()))
             .addWhitespace()
@@ -929,12 +910,16 @@ public class GanttProject extends GanttProjectBase implements ResourceView, Gant
     return tree;
   }
 
+  //ADICIONADO PELO GRUPO
+  //retorna a ação de unlink das dependências das tarefas selecionadas
   public GPAction getDeleteArrowsAction() {
     final GPAction unlinkAction = new TaskUnlinkAction(getTaskManager(), getTaskSelectionManager(), getUIFacade());
     final GPAction taskDeleteArrowsAction = unlinkAction;
     return unlinkAction;
   }
 
+  //ADICIONADO PELO GRUPO
+  //retorna a ação de link das tarefas selecionadas
   public GPAction getNewArrowsAction() {
     final GPAction linkAction = new TaskLinkAction(getTaskManager(), getTaskSelectionManager(), getUIFacade());
     final GPAction taskNewArrowsAction = linkAction;
