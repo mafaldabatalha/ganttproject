@@ -36,6 +36,7 @@ import net.sourceforge.ganttproject.action.edit.EditMenu;
 import net.sourceforge.ganttproject.action.help.HelpMenu;
 import net.sourceforge.ganttproject.action.project.ProjectMenu;
 import net.sourceforge.ganttproject.action.resource.ResourceActionSet;
+import net.sourceforge.ganttproject.action.task.TaskLinkAction;
 import net.sourceforge.ganttproject.action.task.TaskUnlinkAction;
 import net.sourceforge.ganttproject.action.view.ViewCycleAction;
 import net.sourceforge.ganttproject.action.view.ViewMenu;
@@ -683,8 +684,10 @@ public class GanttProject extends GanttProjectBase implements ResourceView, Gant
     });
 
     builder.addButton(new TestGanttRolloverButton(deleteAction))
-           .addButton(new TestGanttRolloverButton(getdeleteArrowsAction().asToolbarAction()))
-        .addWhitespace()
+            .addWhitespace()
+            .addButton(new TestGanttRolloverButton(getNewArrowsAction().asToolbarAction()))
+            .addButton(new TestGanttRolloverButton(getDeleteArrowsAction().asToolbarAction()))
+            .addWhitespace()
         .addButton(new TestGanttRolloverButton(propertiesAction))
         .addButton(new TestGanttRolloverButton(getCutAction().asToolbarAction()))
         .addButton(new TestGanttRolloverButton(getCopyAction().asToolbarAction()))
@@ -926,24 +929,17 @@ public class GanttProject extends GanttProjectBase implements ResourceView, Gant
     return tree;
   }
 
-  public GPAction getdeleteArrowsAction()
-  {
-    // PROCESSO QUE EU ACHO QUE É PRECISO FAZER
-    //1. receber a tarefa que se encontra selecionada
-    //List<Task> selectedTasks = getTaskSelectionManager().getSelectedTasks()
-    //final GPAction taskDeleteArrowsAction = unlinkAction;
-      /*deleteArrowsAction = new ArtefactDeleteArrowsAction(new ActiveActionProvider() {
-        @Override
-        public AbstractAction getActiveAction() {
-          return getTabs().getSelectedIndex() == UIFacade.GANTT_INDEX ? taskDeleteArrowsAction: null;
-        }
-      }*/
-    //2. receber, da tarefa, a coleção de dependências
-    //myTaskManager.getDependencyCollection();
-    //3. fazer unlink para cada dependência da coleção
-    return new TaskUnlinkAction(getTaskManager(), getTaskSelectionManager(), getUIFacade());
+  public GPAction getDeleteArrowsAction() {
+    final GPAction unlinkAction = new TaskUnlinkAction(getTaskManager(), getTaskSelectionManager(), getUIFacade());
+    final GPAction taskDeleteArrowsAction = unlinkAction;
+    return unlinkAction;
   }
 
+  public GPAction getNewArrowsAction() {
+    final GPAction linkAction = new TaskLinkAction(getTaskManager(), getTaskSelectionManager(), getUIFacade());
+    final GPAction taskNewArrowsAction = linkAction;
+    return taskNewArrowsAction;
+  }
 
   public GPAction getCopyAction() {
     return getViewManager().getCopyAction();

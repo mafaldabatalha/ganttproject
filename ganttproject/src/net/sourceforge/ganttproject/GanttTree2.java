@@ -88,9 +88,9 @@ public class GanttTree2 extends TreeTableContainer<Task, GanttTreeTable, GanttTr
 
   private final GPAction myMoveDownAction;
 
-  private final GPAction myLinkTasksAction;
+  //private final GPAction myLinkTasksAction;
 
-  private final GPAction myUnlinkTasksAction;
+  //private final GPAction myUnlinkTasksAction;
 
   private boolean isOnTaskSelectionEventProcessing;
 
@@ -161,8 +161,8 @@ public class GanttTree2 extends TreeTableContainer<Task, GanttTreeTable, GanttTr
     GPAction newAction = new TaskNewAction(project.getProject(), uiFacade);
 
     setArtefactActions(newAction, propertiesAction, deleteAction);
-    myLinkTasksAction = new TaskLinkAction(taskManager, selectionManager, uiFacade);
-    myUnlinkTasksAction = new TaskUnlinkAction(taskManager, selectionManager, uiFacade);
+    //myLinkTasksAction = new TaskLinkAction(taskManager, selectionManager, uiFacade);
+    //myUnlinkTasksAction = new TaskUnlinkAction(taskManager, selectionManager, uiFacade);
     myIndentAction = new TaskIndentAction(taskManager, selectionManager, uiFacade, this);
     myUnindentAction = new TaskUnindentAction(taskManager, selectionManager, uiFacade, this);
     myMoveUpAction = new TaskMoveUpAction(taskManager, selectionManager, uiFacade, this);
@@ -539,8 +539,7 @@ public class GanttTree2 extends TreeTableContainer<Task, GanttTreeTable, GanttTr
   @Override
   public AbstractAction[] getTreeActions() {
     if (myTreeActions == null) {
-      myTreeActions = new AbstractAction[] { myUnindentAction, myIndentAction, myMoveUpAction, myMoveDownAction,
-          myLinkTasksAction, myUnlinkTasksAction };
+      myTreeActions = new AbstractAction[] { myUnindentAction, myIndentAction, myMoveUpAction, myMoveDownAction};
     }
     return myTreeActions;
   }
@@ -549,7 +548,8 @@ public class GanttTree2 extends TreeTableContainer<Task, GanttTreeTable, GanttTr
   public void addToolbarActions(ToolbarBuilder builder) {
     builder.addButton(myUnindentAction.asToolbarAction()).addButton(myIndentAction.asToolbarAction())
         .addButton(myMoveUpAction.asToolbarAction()).addButton(myMoveDownAction.asToolbarAction())
-        .addButton(myLinkTasksAction.asToolbarAction()).addButton(myUnlinkTasksAction.asToolbarAction());
+        //.addButton(myLinkTasksAction.asToolbarAction()).addButton(myUnlinkTasksAction.asToolbarAction())
+    ;
   }
 
   @Override
