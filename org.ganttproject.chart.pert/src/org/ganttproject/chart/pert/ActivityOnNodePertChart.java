@@ -800,6 +800,9 @@ public class ActivityOnNodePertChart extends PertChart {
      *
      * @param g
      *          Graphics where the graphical node is to be painted.
+     *
+     * Update da implementação da criação do node de forma a aparecer os recursos da tarefa.
+     *
      */
     private void paintMe(Graphics g) {
       Font f = g.getFont();
