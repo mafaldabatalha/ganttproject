@@ -243,8 +243,8 @@ class ResourcesTableModel extends AbstractTableModel {
             ResourceAssignment next = it.next();
             if(next.getTask().equals(assignment.getTask())){
                 int newLoad = (int) next.getLoad() + 100;
-                next.setLoad(newLoad);
-                getUIFacade().showConfirmationDialog(SAME_PERSON_SAME_TASK, i18n.getText("warning"));
+                if(getUIFacade().showConfirmationDialog(SAME_PERSON_SAME_TASK, i18n.getText("warning")) == Choice.YES)
+                    next.setLoad(newLoad);
             }
         }
     }
@@ -263,7 +263,7 @@ class ResourcesTableModel extends AbstractTableModel {
     /**
      * Message that shows when that person is already in that task and adds a new load in the task.
      */
-    private final String SAME_PERSON_SAME_TASK = "Carga da pessoa aumentda na tabela. Pode verificar a carga depois da confirmacao";
+    private final String SAME_PERSON_SAME_TASK = "Carga da pessoa aumentda na tabela. Pode verificar a carga depois da confirmacao. Se nao quiser clique em nao.";
 
     /**
      * Message that shows when that person is already in that task.
