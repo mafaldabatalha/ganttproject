@@ -251,7 +251,7 @@ class ResourcesTableModel extends AbstractTableModel {
     /**
      * Message that shows when that person is already in that task.
      */
-    private final String HOLIDAYS_OVERLAP = "Ferias sobrespostas! %s tem ferias marcadas de %s a %s. Quer atribuir a tarefa na mesma?";
+    private final String HOLIDAYS_OVERLAP = "Ferias sobrespostas! %s tem ferias marcadas de %s a %s. Quer atribuir a tarefa a mesma?";
 
     private void createAssignment(Object value) {
         if (value instanceof HumanResource) {
@@ -272,7 +272,15 @@ class ResourcesTableModel extends AbstractTableModel {
                 }
             } else {
                 choice = Choice.NO;
-                getUIFacade().showConfirmationDialog(SAME_PERSON_SAME_TASK, i18n.getText("warning"));
+                //getUIFacade().showConfirmationDialog(SAME_PERSON_SAME_TASK, i18n.getText("warning"));
+                Iterator<ResourceAssignment> it = myAssignments.iterator();
+                while(it.hasNext()) {
+                    ResourceAssignment next = it.next();
+                    if(next.getTask().equals(newAssignment.getTask())){
+                        int newLoad = (int) next.getLoad() + 100;
+                        next.setLoad(newLoad);
+                    }
+                }
             }
 
             if (choice == Choice.YES) {
