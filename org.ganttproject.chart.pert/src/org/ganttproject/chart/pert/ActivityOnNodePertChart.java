@@ -850,16 +850,17 @@ public class ActivityOnNodePertChart extends PertChart {
       if (node.getDuration() != null)
         g.drawString(language.getText("duration") + ": " + node.getDuration().getLength(), x + getTextPaddingX(),
                 (int) (y + getTextPaddingY() + 4.3 * fontMetrics.getHeight()));
-      g.setFont(f);
 
       if (node.getAllHumanResources() != null) {
         double n = 5.3;
         for (HumanResource resource : node.getAllHumanResources()) {
-          g.drawString(language.getText("resources ") + ": " + resource, x + getTextPaddingX(),
+          g.drawString(language.getText("resources") + ": " + resource, x + getTextPaddingX(),
                   (int) (y + getTextPaddingY() + n * fontMetrics.getHeight()));
           n = n+1;
         }
       }
+
+      g.setFont(f);
 
 
     }
