@@ -1,1 +1,5 @@
-Metricas e decumentação revistas por Gonçalo Cerveira:
+Revisto por Gonçalo Cerveira
+
+Começando pelo ficheiro dos dados colecionados diria que a informação de dados encontra se completa, não sendo preciso adicionar nada extra. No entanto diria  
+que a organização dos gráficos parece confusa, secalhar uma melhor separação dos graficos seria uma alteração positiva, sendo que durante a leitura e verificação de alguns graficos os titulos estavam em cima e em baixo e era dificil saber para que grafico e que o titulo era.
+

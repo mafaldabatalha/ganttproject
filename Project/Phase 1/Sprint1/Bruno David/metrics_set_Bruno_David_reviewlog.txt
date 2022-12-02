@@ -1,1 +1,21 @@
+Revisto por Rafael Mira
+
+Calculei as MOOD metrics no Intellij e os valores estão corretos. (no xls)
+
+Nota: Devia-se por uma nota no texto a indicar que todos os gráficos gerados são uma linha reta e portanto não se incluiram no documento.
+
+AHF analisado, parece-me ok. A única alteração que fazia era adicionar um exemplo especifico de uma classe que tivesse um nivel de encapsulamento baixo.
+
+AIF analisado, concordo.
+
+CF analisado, de acordo com os dados das MOOD metrics o raciocionio está correto.
+
+MHF analisado, concordo. (e aqui está um exemplo especifico, era isto a que me referia na análise ao AHF)
+
+MIF analisado, concordo.
+
+PF analisado, concordo. Alteração a fazer: na segunda frase do segundo paragrafo, corrigir a frase que está mal escrita
+
+
+
 
