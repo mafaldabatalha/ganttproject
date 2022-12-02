@@ -1,1 +1,7 @@
+Revisto por: Bruno David
 
+Existem alguns erros ortográficos e problemas no que toca à explicação, que devia melhor.
+As metrics inicialmente tornam-se um pouco confusas de perceber, devido à noção que é preciso ter de package, mas, depois na zona onde são discutidos os valores obtidos no projeto, torna-se compreensível. Provavelmente, esses exemplos deveriam estar junto à explicação de cada metric, para melhor compreensão.
+A discussão dos valores obtidos parece-me bem, tendo apenas a apontar o seguinte:
+    em Ca, não percebi o 1º parágrafo (ambíguo?)
+    as restantes sofrem do mesmo problema apontado sobre os erros e explicação.
