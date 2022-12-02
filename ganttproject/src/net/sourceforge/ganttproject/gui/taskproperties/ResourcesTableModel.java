@@ -232,6 +232,23 @@ class ResourcesTableModel extends AbstractTableModel {
         return humanResource.sameTask(task);
     }
 
+    /**
+     * Function that adds more load to a humanResource that has already some load in the task.
+     *
+     * @param assignment - assignment to verify
+     */
+    private void addLoadtoResource(ResourceAssignment assignment){
+        Iterator<ResourceAssignment> it = myAssignments.iterator();
+        while(it.hasNext()) {
+            ResourceAssignment next = it.next();
+            if(next.getTask().equals(assignment.getTask())){
+                int newLoad = (int) next.getLoad() + 100;
+                next.setLoad(newLoad);
+                getUIFacade().showConfirmationDialog(SAME_PERSON_SAME_TASK, i18n.getText("warning"));
+            }
+        }
+    }
+
     private final GanttLanguage i18n = GanttLanguage.getInstance();
 
     /**
@@ -244,9 +261,9 @@ class ResourcesTableModel extends AbstractTableModel {
     private final String OVERLOAD_MSG_PLURAL = "Sobrecarga de Tarefas! %s ja esta atribuido a %d tarefas neste periodo de tempo. Quer prosseguir com a atribuicao da tarefa?";
 
     /**
-     * Message that shows when that person is already in that task.
+     * Message that shows when that person is already in that task and adds a new load in the task.
      */
-    private final String SAME_PERSON_SAME_TASK = "Esta pessoa ja esta designada na tarefa, caso queira acrescentar designar mais funcoes da tarefa aumente a carga da pessoa na tabela.";
+    private final String SAME_PERSON_SAME_TASK = "Carga da pessoa aumentda na tabela. Pode verificar a carga depois da confirmacao";
 
     /**
      * Message that shows when that person is already in that task.
@@ -272,15 +289,7 @@ class ResourcesTableModel extends AbstractTableModel {
                 }
             } else {
                 choice = Choice.NO;
-                //getUIFacade().showConfirmationDialog(SAME_PERSON_SAME_TASK, i18n.getText("warning"));
-                Iterator<ResourceAssignment> it = myAssignments.iterator();
-                while(it.hasNext()) {
-                    ResourceAssignment next = it.next();
-                    if(next.getTask().equals(newAssignment.getTask())){
-                        int newLoad = (int) next.getLoad() + 100;
-                        next.setLoad(newLoad);
-                    }
-                }
+                addLoadtoResource(newAssignment);
             }
 
             if (choice == Choice.YES) {
