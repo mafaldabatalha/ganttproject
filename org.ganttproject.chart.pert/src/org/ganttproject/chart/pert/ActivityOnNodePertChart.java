@@ -23,6 +23,7 @@ import net.sourceforge.ganttproject.IGanttProject;
 import net.sourceforge.ganttproject.chart.Chart;
 import net.sourceforge.ganttproject.chart.export.ChartImageVisitor;
 import net.sourceforge.ganttproject.language.GanttLanguage;
+import net.sourceforge.ganttproject.resource.HumanResource;
 import net.sourceforge.ganttproject.util.StringUtils;
 import org.ganttproject.chart.pert.PertChartAbstraction.TaskGraphNode;
 
@@ -808,17 +809,17 @@ public class ActivityOnNodePertChart extends PertChart {
       int type = this.node.getType();
       Color color;
       switch (type) {
-      case PertChartAbstraction.Type.NORMAL:
-        color = NORMAL_COLOR;
-        break;
-      case PertChartAbstraction.Type.SUPER:
-        color = SUPER_COLOR;
-        break;
-      case PertChartAbstraction.Type.MILESTONE:
-        color = MILESTONE_COLOR;
-        break;
-      default:
-        color = NORMAL_COLOR;
+        case PertChartAbstraction.Type.NORMAL:
+          color = NORMAL_COLOR;
+          break;
+        case PertChartAbstraction.Type.SUPER:
+          color = SUPER_COLOR;
+          break;
+        case PertChartAbstraction.Type.MILESTONE:
+          color = MILESTONE_COLOR;
+          break;
+        default:
+          color = NORMAL_COLOR;
       }
       g.setColor(this.backgroundColor);
 
@@ -828,27 +829,39 @@ public class ActivityOnNodePertChart extends PertChart {
       g.drawRoundRect(x + 1, y + 1, getNodeWidth() - 2, getNodeHeight() - 2, 14, 14);
 
       g.drawLine(x, y + getTextPaddingY() + fontMetrics.getHeight() + getYOffset(), x + getNodeWidth(), y + getTextPaddingY() + fontMetrics.getHeight()
-          + getYOffset());
+              + getYOffset());
 
       g.setColor(Color.BLACK);
       String name = node.getName();
 
       g.drawString(StringUtils.getTruncatedString(name, getNodeWidth() - getTextPaddingX(), fontMetrics), x + getTextPaddingX(), y + getTextPaddingY()
-          + fontMetrics.getHeight());
+              + fontMetrics.getHeight());
 
       g.setFont(getBaseFont());
       fontMetrics = g.getFontMetrics(g.getFont());
 
       g.setColor(Color.BLACK);
       g.drawString(language.getText("start") + ": " + node.getStartDate().toString(), x + getTextPaddingX(),
-          (int) (y + getTextPaddingY() + 2.3 * fontMetrics.getHeight()));
+              (int) (y + getTextPaddingY() + 2.3 * fontMetrics.getHeight()));
+
       g.drawString(language.getText("end") + ": " + node.getEndDate().toString(), x + getTextPaddingX(),
-          (int) (y + getTextPaddingY() + 3.3 * fontMetrics.getHeight()));
+              (int) (y + getTextPaddingY() + 3.3 * fontMetrics.getHeight()));
 
       if (node.getDuration() != null)
         g.drawString(language.getText("duration") + ": " + node.getDuration().getLength(), x + getTextPaddingX(),
-            (int) (y + getTextPaddingY() + 4.3 * fontMetrics.getHeight()));
+                (int) (y + getTextPaddingY() + 4.3 * fontMetrics.getHeight()));
       g.setFont(f);
+
+      if (node.getAllHumanResources() != null) {
+        double n = 5.3;
+        for (HumanResource resource : node.getAllHumanResources()) {
+          g.drawString(language.getText("resources ") + ": " + resource, x + getTextPaddingX(),
+                  (int) (y + getTextPaddingY() + n * fontMetrics.getHeight()));
+          n = n+1;
+        }
+      }
+
+
     }
 
     @Override
