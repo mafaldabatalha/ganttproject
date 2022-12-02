@@ -803,6 +803,7 @@ public class ActivityOnNodePertChart extends PertChart {
      */
     private void paintMe(Graphics g) {
       Font f = g.getFont();
+      int b = 0;
       g.setFont(getBoldFont());
       FontMetrics fontMetrics = g.getFontMetrics(g.getFont());
 
@@ -821,12 +822,19 @@ public class ActivityOnNodePertChart extends PertChart {
         default:
           color = NORMAL_COLOR;
       }
+
+      if (node.getAllHumanResources() != null) {
+        for (HumanResource resource : node.getAllHumanResources()) {
+          b = b+15;
+        }
+      }
+
       g.setColor(this.backgroundColor);
 
-      g.fillRoundRect(x, y, getNodeWidth(), getNodeHeight(), 16, 16);
+      g.fillRoundRect(x, y, getNodeWidth(), getNodeHeight()+b, 16, 16);
       g.setColor(color);
-      g.drawRoundRect(x, y, getNodeWidth(), getNodeHeight(), 16, 16);
-      g.drawRoundRect(x + 1, y + 1, getNodeWidth() - 2, getNodeHeight() - 2, 14, 14);
+      g.drawRoundRect(x, y, getNodeWidth(), getNodeHeight()+b, 16, 16);
+      g.drawRoundRect(x + 1, y + 1, getNodeWidth() - 2, getNodeHeight() - 2 + b, 14, 14);
 
       g.drawLine(x, y + getTextPaddingY() + fontMetrics.getHeight() + getYOffset(), x + getNodeWidth(), y + getTextPaddingY() + fontMetrics.getHeight()
               + getYOffset());
@@ -853,10 +861,12 @@ public class ActivityOnNodePertChart extends PertChart {
 
       if (node.getAllHumanResources() != null) {
         double n = 5.3;
+        int a = 1;
         for (HumanResource resource : node.getAllHumanResources()) {
-          g.drawString(language.getText("resources") + ": " + resource, x + getTextPaddingX(),
+          g.drawString(language.getText("resource") +a+ ": " + resource, x + getTextPaddingX(),
                   (int) (y + getTextPaddingY() + n * fontMetrics.getHeight()));
           n = n+1;
+          a = a+1;
         }
       }
 
