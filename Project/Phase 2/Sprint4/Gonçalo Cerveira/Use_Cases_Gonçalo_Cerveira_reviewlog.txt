@@ -1,0 +1,26 @@
+Revisto por Rafael Mira
+
+No diagrama:
+- há um erro, está um useCase2 que provavelmente é o Close.
+- Devia-se especificar Open Project, Close project, Import Project, etc
+- Nos use cases temos de ter um verbo lá, por exemplo em vez de PDF file, "Export to PDF file"
+
+- No use case import, o import assistant está correto mas a generalização nao devia ser nesse use case. Eu adicionava outro use case "select file", e colocaria a generalização nesse use case.
+- No use case export, a mesma coisa da linha acima.
+
+- Nos use cases onde usas a generalização coloca {abstract}
+
+Nos use case descriptions:
+
+- Penso que o ID tem de ser um número
+- Quando não existem atores secundários coloca "nenhum" lá para mostrar que não nos esquecemos
+- Quando não existirem pré ou pós condições coloca "nenhuma" pela mesma razão
+- Ao indicar os atores indica somente o nome deles. Pode-se explicar a função deles brevemente na descrição do use case
+
+Nos user stories:
+
+- Por exemplo no Open,  "i want to have access to my previous works and be possible to modify them", devia-se dividir isto em duas user stories diferentes
+- A mesma alteração mencionada acima no import
+- No import, na parte do, so that I, tenta escrever sem o "and" para aproximar da estrutura dos user stories
+- No export a mesma alteração mencionada na linha acima
+
