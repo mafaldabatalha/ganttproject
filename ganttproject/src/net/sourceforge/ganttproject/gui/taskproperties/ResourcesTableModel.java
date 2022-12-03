@@ -192,43 +192,62 @@ class ResourcesTableModel extends AbstractTableModel {
     }
 
     /**
-     * Função auxiliar para verificar se existem tarefas com datas sobrepostas para a pessoa que vai ser atribuida a uma nova tarefa.
-     * Retorna o numero de tarefas com datas sobrepostas para a pessoa que vai ser atribuida a uma tarefa.
+     * Função auxiliar para verificar se a pessoa que vai ser atribuida a uma nova tarefa já tem tarefas para a mesma data.
      *
-     * @param assignment - assignment a verificar
-     * @return - Retorna o numero de tarefas com datas sobrepostas para a pessoa que vai ser atribuida a uma nova tarefa.
+     * @param humanResource - pessoa a quem esta a vai ser atribuida a tarefa
+     * @param task          - tarefa a ser atribuida
+     * @return - devolve a escolha feita pelo utilizador quando existe conlflito nas datas. Ou devolve <code> CHOICE.YES </code> caso não haja conflito
      */
-    private int overlappingTasks(ResourceAssignment assignment) {
-        Task task = assignment.getTask();
+    private Choice overlappingTasks(HumanResource humanResource, Task task) {
         GanttCalendar start = task.getStart();
         GanttCalendar end = task.getEnd();
-        HumanResource humanResource = assignment.getResource();
-        return humanResource.overlappingDates(start, end);
+        Choice choice = Choice.YES;
+        int numberOfOverlappingDates = humanResource.overlappingDates(start, end);
+
+        if (numberOfOverlappingDates != 0) {
+            String msgWithResourceName;
+            String resourceName = humanResource.getName();
+            if (numberOfOverlappingDates == 1)
+                msgWithResourceName = String.format(OVERLOAD_MSG_SINGULAR, resourceName, numberOfOverlappingDates);
+            else
+                msgWithResourceName = String.format(OVERLOAD_MSG_PLURAL, resourceName, numberOfOverlappingDates);
+            choice = getUIFacade().showConfirmationDialog(msgWithResourceName, i18n.getText("warning"));
+        }
+
+        return choice;
     }
 
     /**
      * Função auxiliar para verificar se a pessoa que vai ser atribuida a uma nova tarefa já tem férias marcadas para a data da tarefa.
      *
-     * @param assignment - assignment a verificar
-     * @return - devolve null caso não haja conflito entre as ferias e a data da tarefa ou, devolve a data onde há conflito.
+     * @param humanResource - pessoa a quem esta a vai ser atribuida a tarefa
+     * @param task          - tarefa a ser atribuida
+     * @return - devolve a escolha feita pelo utilizador quando existe conlflito nas datas. Ou devolve null caso não haja conflito
      */
-    private GanttDaysOff overlappingHolidays(ResourceAssignment assignment) {
-        Task task = assignment.getTask();
+    private Choice overlappingHolidays(HumanResource humanResource, Task task) {
         GanttCalendar start = task.getStart();
         GanttCalendar end = task.getEnd();
-        HumanResource humanResource = assignment.getResource();
-        return humanResource.overlappingHolidays(start, end);
+        GanttDaysOff daysOff = humanResource.overlappingHolidays(start, end);
+        Choice choice = Choice.YES;
+
+        if (daysOff != null) {
+            String holidayStart = daysOff.getStart().toString();
+            String holidayEnd = daysOff.getFinish().toString();
+            String holidayOverlap = String.format(HOLIDAYS_OVERLAP, humanResource.getName(), holidayStart, holidayEnd);
+            choice = getUIFacade().showConfirmationDialog(holidayOverlap, i18n.getText("warning"));
+        }
+
+        return choice;
     }
 
     /**
-     * Auxiliary function that verifies if the HumanResource already is in the task.
+     * Auxiliary function that verifies if the person is already associated in that task.
      *
-     * @param assignment - assignment to verify
-     * @return - Boolean, True if task is already in the humanResource system, False if it does not.
+     * @param humanResource - assignment to verify
+     * @param task          - task to verify
+     * @return - <code> true </code> if the person is already associated with the task, otherwise returns <code> false </code>
      */
-    private boolean sameTask(ResourceAssignment assignment) {
-        Task task = assignment.getTask();
-        HumanResource humanResource = assignment.getResource();
+    private boolean sameTask(HumanResource humanResource, Task task) {
         return humanResource.sameTask(task);
     }
 
@@ -237,13 +256,13 @@ class ResourcesTableModel extends AbstractTableModel {
      *
      * @param assignment - assignment to verify
      */
-    private void addLoadtoResource(ResourceAssignment assignment){
+    private void addLoadtoResource(ResourceAssignment assignment) {
         Iterator<ResourceAssignment> it = myAssignments.iterator();
-        while(it.hasNext()) {
+        while (it.hasNext()) {
             ResourceAssignment next = it.next();
-            if(next.getTask().equals(assignment.getTask())){
+            if (next.getTask().equals(assignment.getTask())) {
                 int newLoad = (int) next.getLoad() + 100;
-                if(getUIFacade().showConfirmationDialog(SAME_PERSON_SAME_TASK, i18n.getText("warning")) == Choice.YES)
+                if (getUIFacade().showConfirmationDialog(SAME_PERSON_SAME_TASK, i18n.getText("warning")) == Choice.YES)
                     next.setLoad(newLoad);
             }
         }
@@ -263,10 +282,10 @@ class ResourcesTableModel extends AbstractTableModel {
     /**
      * Message that shows when that person is already in that task and adds a new load in the task.
      */
-    private final String SAME_PERSON_SAME_TASK = "Carga da pessoa aumentda na tabela. Pode verificar a carga depois da confirmacao. Se nao quiser clique em nao.";
+    private final String SAME_PERSON_SAME_TASK = "Pessoa ja esta associada a esta tarefa. Deseja aumentar a carga de trabalho?";
 
     /**
-     * Message that shows when that person is already in that task.
+     * Mensagem a exibir quando a pessoa tem férias marcadas para a data da tarefa que lhe está a ser atribuida.
      */
     private final String HOLIDAYS_OVERLAP = "Ferias sobrespostas! %s tem ferias marcadas de %s a %s. Quer atribuir a tarefa a mesma?";
 
@@ -275,44 +294,26 @@ class ResourcesTableModel extends AbstractTableModel {
             HumanResource humanResource = (HumanResource) value;
             ResourceAssignment newAssignment = myMutator.addAssignment(humanResource);
             newAssignment.setLoad(100);
-            String resourceName = humanResource.getName();
-            Choice choice = Choice.YES;
-            if (!sameTask(newAssignment)) {
-                int numberOfOverlappingDates = overlappingTasks(newAssignment);
-                if (numberOfOverlappingDates != 0) {
-                    String msgWithResourceName;
-                    if (numberOfOverlappingDates == 1)
-                        msgWithResourceName = String.format(OVERLOAD_MSG_SINGULAR, resourceName, numberOfOverlappingDates);
-                    else
-                        msgWithResourceName = String.format(OVERLOAD_MSG_PLURAL, resourceName, numberOfOverlappingDates);
-                    choice = getUIFacade().showConfirmationDialog(msgWithResourceName, i18n.getText("warning"));
-                }
-            } else {
+            Task task = newAssignment.getTask();
+            Choice choice;
+            if (!sameTask(humanResource, task))
+                choice = overlappingTasks(humanResource, task);
+            else {
                 choice = Choice.NO;
                 addLoadtoResource(newAssignment);
             }
 
             if (choice == Choice.YES) {
-                GanttDaysOff daysOff = overlappingHolidays(newAssignment);
-                if (daysOff != null) {
-                    String holidayStart = daysOff.getStart().toString();
-                    String holidayEnd = daysOff.getFinish().toString();
-                    String holidayOverlap = String.format(HOLIDAYS_OVERLAP, resourceName, holidayStart, holidayEnd);
-                    choice = getUIFacade().showConfirmationDialog(holidayOverlap, i18n.getText("warning"));
-                }
-
+                choice = overlappingHolidays(humanResource, task);
                 if (choice == Choice.YES) {
-                    boolean coord = false;
-                    if (myAssignments.isEmpty())
-                        coord = true;
+                    boolean coord = myAssignments.isEmpty();
                     newAssignment.setCoordinator(coord);
                     newAssignment.setRoleForAssignment(newAssignment.getResource().getRole());
                     myAssignments.add(newAssignment);
                     fireTableRowsInserted(myAssignments.size(), myAssignments.size());
                 } else myMutator.deleteAssignment(humanResource);
-            } else {
+            } else
                 myMutator.deleteAssignment(humanResource);
-            }
         }
     }
 
