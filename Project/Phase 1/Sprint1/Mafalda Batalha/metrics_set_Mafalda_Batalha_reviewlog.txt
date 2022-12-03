@@ -1,1 +1,11 @@
+Revisto por: Vasco Malta
 
+Uma vez que é possivel analisar classes e métodos através dos mecanismo de calculo de metricas do intellij penso que a primeira linha esteja encompleta ao dizer que a metrica permite calcular a metrica de um projeto. Talvez referindo em especifico ao nosso projeto em vez de um projeto qualquer no geral resolve-se.
+
+Explicação do WMC: parece bem estruturada e de facil compreensão.
+
+Explicação do OCavg: igual a explicação anterior tambem pareceu bem estruturada e de facil compreensão.
+
+Explicação OCmax: a mesma opinião que tive das explicações anteriores.
+
+Conclusão: concordo
