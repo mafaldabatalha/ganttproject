@@ -1,7 +1,11 @@
 58592 - Vasco Malta - id: Malta58592
+
 59243 - Rafael Mira - id: RafaelCMira
+
 60011 - Bruno David - id: BrunoDavidES
+
 60684 - Mafalda Batalha - id: mafaldabatalha
+
 61696 - Gonçalo Cerveira - id: GoncaloCerveira
 
 GanttProject
