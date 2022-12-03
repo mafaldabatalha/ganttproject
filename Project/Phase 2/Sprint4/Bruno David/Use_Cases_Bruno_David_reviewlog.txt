@@ -1,0 +1,14 @@
+Revito por Gonçalo Cerveira
+
+No diagram:
+  - Diria que podias juntar todos os use cases de forma a podermos ver todas as possibilidades ao mesmo tempo
+  - Nao acho que seja necessario o ator secundário "Projeto", uma vez que é na aplicação que estás a usar o próprio projeto
+  - Nos use cases  implica o uso de um verbo, por exemplo em vez de "Adicionar" ficaria "Adicionar tabela"
+  - No Eliminar tarefa diria que a ligação entre selecionar e apagar seria mais de extend, pois mesmo quando a pessoa tenta eleminar a tarefa, na altura de clicar pode já não querer e cancelar.
+
+No use case descriptions:
+  - Penso que tens de acrescentar um id aos use cases
+  - E apresento a mesma sugestão do diagrama de nao precisar de achar que o Projeto nao precisar de ser ator secundário
+
+No user stories:
+  - Falta te fazer os user stories
