@@ -1,4 +1,4 @@
-Revisto por Rafael Mira
+Revisto por Rafael Mira (Review vista e alterações feitas nos documentos)
 
 No diagrama:
 - há um erro, está um useCase2 que provavelmente é o Close.
