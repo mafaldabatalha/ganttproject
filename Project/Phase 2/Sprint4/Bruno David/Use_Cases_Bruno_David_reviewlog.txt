@@ -10,5 +10,3 @@ No use case descriptions:
   - Penso que tens de acrescentar um id aos use cases
   - E apresento a mesma sugestão do diagrama de nao precisar de achar que o Projeto nao precisar de ser ator secundário
 
-No user stories:
-  - Falta te fazer os user stories
