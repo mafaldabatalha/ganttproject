@@ -1,0 +1,101 @@
+Reviws dos use cases:
+
+Bruno David (Use case das Tarefas)
+  Revisto por Gonçalo Cerveira
+
+  No diagram:
+    - Diria que podias juntar todos os use cases de forma a podermos ver todas as possibilidades ao mesmo tempo
+    - Nao acho que seja necessario o ator secundário "Projeto", uma vez que é na aplicação que estás a usar o próprio projeto
+    - Nos use cases  implica o uso de um verbo, por exemplo em vez de "Adicionar" ficaria "Adicionar tabela"
+    - No Eliminar tarefa diria que a ligação entre selecionar e apagar seria mais de extend, pois mesmo quando a pessoa tenta eleminar a tarefa, na altura de clicar pode já não querer e cancelar.
+
+  No use case descriptions:
+    - Penso que tens de acrescentar um id aos use cases
+    - E apresento a mesma sugestão do diagrama de nao precisar de achar que o Projeto nao precisar de ser ator secundário
+
+
+
+
+
+Gonçalo Cerveira (Use case de Import/Export e Open/Close)
+  Revisto por Rafael Mira (Review vista e alterações feitas nos documentos)
+
+  No diagrama:
+  - há um erro, está um useCase2 que provavelmente é o Close.
+  - Devia-se especificar Open Project, Close project, Import Project, etc
+  - Nos use cases temos de ter um verbo lá, por exemplo em vez de PDF file, "Export to PDF file"
+
+  - No use case import, o import assistant está correto mas a generalização nao devia ser nesse use case. Eu adicionava outro use case "select file", e colocaria a generalização nesse use case.
+  - No use case export, a mesma coisa da linha acima.
+
+  - Nos use cases onde usas a generalização coloca {abstract}
+
+  Nos use case descriptions:
+
+  - Penso que o ID tem de ser um número
+  - Quando não existem atores secundários coloca "nenhum" lá para mostrar que não nos esquecemos
+  - Quando não existirem pré ou pós condições coloca "nenhuma" pela mesma razão
+  - Ao indicar os atores indica somente o nome deles. Pode-se explicar a função deles brevemente na descrição do use case
+
+  Nos user stories:
+
+  - Por exemplo no Open,  "i want to have access to my previous works and be possible to modify them", devia-se dividir isto em duas user stories diferentes
+  - A mesma alteração mencionada acima no import
+  - No import, na parte do, so that I, tenta escrever sem o "and" para aproximar da estrutura dos user stories
+  - No export a mesma alteração mencionada na linha acima 
+  
+  
+  
+  
+  
+Mafalda Batalha (Use case de Definições Gráficas)
+  Revisto por Vasco Malta
+
+  Em relação ao use case diagram parece-me correto, não tenho nada a dizer.
+  Em relação ao use case description penso ter encontrado alguns erros como por exemplo a repetição de informação ou de provavel distração na altura de escrever o codigo.
+  Exemplo repetição:
+    •	Reduzir separador – o utilizador reduz o tamanho do separador
+    • Ajustar separador – o utilizador ajusta a janela do separador aberto (Gantt ou Resources Chart)
+  Exemplo distração:
+    •	Aumentar separador – o utilizador reduz o tamanho do separador
+
+  Tirnado essas repetições ou distrações, concordo com o resto da estruturação do documento e achei adequado o facto de não se repetir sempre a informação de qual o user
+  principal uma vez que se tratam de varias user cases todas com o mesmo user principal.
+  
+  
+  
+  
+  
+ 
+ Rafael Mira (Use case de Recurssos)
+  Revisto por: Bruno David
+
+  User Stories: na minha opinião, todas as user stories deviam seguir o mesmo padrão de escrita.
+                de resto, parece-me bem.
+
+  Use Cases Diagrams: parecem-me bem. Nada a apontar.
+
+  Use Cases Description: Adicionar Recurso - dira que as pré-condições deviam incluir que o nome dado ao recurso não deve de existir
+                                             (mais por uma questão de compreensão da tabela de recursos).
+                         Eliminar Recurso - nas pós-condições devia incluir que as tarefas associadas a esse recurso deixam de o estar.
+                         Enviar E-mail - nas pós-condições é enviado e não colado.
+
+                         De resto parece-me tudo bem.
+
+
+
+
+
+Vasco Malta (Use case das novas funcionalidades)
+  Revisto por: Mafalda Batalha
+
+  No diagrama de use cases, cada use case é suposto representar uma ação que o ator pode fazer no sistema e,
+  por isso, os nomes deviam de começar com verbos. Em vez de teres só "Node" deveria de ser, por exemplo, "Ver Node".
+  Em vez de teres um use case "ver" que inclui "diagrama PERT", penso que deveria de ser apenas um use case
+  "Ver diagrama PERT".
+
+  Metade do ator está dentro da caixa que representa o sistema o que não pode acontecer, o ator deve estar fora
+  da caixa.
+
+  Acho que a parte dos use cases relacionados ao pop up poderiam ser modificados, existe alguma informação desnecessária.
+ 
