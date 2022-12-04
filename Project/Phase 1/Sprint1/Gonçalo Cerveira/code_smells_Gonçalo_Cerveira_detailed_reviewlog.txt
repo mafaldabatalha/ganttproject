@@ -1,7 +1,7 @@
 Code smell: Speculative Generality
 Concordo. - Bruno David
 
-Code smell: Dead Code
+Code smell: Dead Code (Arranjado um novo Dead code np trabalho)
 Review: Este método está a ser usado por isso não é dead code. - Rafael Mira
 Review: Está a ser usado na classe abstrata GPCalendarBase.java no método getActivities que, pode ser utilizado pelas suas subClasses. - Rafael Mira
 
