@@ -1,0 +1,192 @@
+Reviews dos code smells, patterns e méricas:
+
+Bruno David
+  Code Smells
+    Code Smell: Speculative Generality (foi alterado após review)
+    Review: Não acho que seja code smell porque no contexto da classe em que está a fazer chamada parece fazer sentido. - Mafalda Batalha
+
+    Code Smell: Dead Code
+    Review: Concordo com os colegas, porém também penso que se poderia pensar e implementar uma funcionalidade que viesse a usar o tal método evitando assim eliminá-lo. - Vasco Malta
+
+    Code Smell: Long Method
+    Review: Concordo. Diria apenas que uma das possíveis soluções seria adicionar um switch, ou caso tenhas outras, dissesses de maneira mais específica e não tão geral. - Gonçalo Cerveira
+    
+    
+  Patterns
+    Pattern: Abstract Factory Pattern
+    Review: Parece-me bem, acho apenas que deveríamos de mudar a forma como a justificação está fraseada, de modo a ficar mais clara. - Mafalda Batalha
+
+    Pattern: Iterator Pattern
+    Review: Concordo. - Vasco Malta
+    Review: Parece-me bem. - Gonçalo Cerveira
+
+    Pattern: Decorator Pattern
+    Review: Concordo. - Gonçalo Cerveira
+    
+  Métricas
+    Revisto por Rafael Mira
+    
+    Calculei as MOOD metrics no Intellij e os valores estão corretos. (no xls)
+    Nota: Devia-se por uma nota no texto a indicar que todos os gráficos gerados são uma linha reta e portanto não se incluiram no documento.
+    AHF analisado, parece-me ok. A única alteração que fazia era adicionar um exemplo especifico de uma classe que tivesse um nivel de encapsulamento baixo.
+    AIF analisado, concordo.
+    CF analisado, de acordo com os dados das MOOD metrics o raciocionio está correto.
+    MHF analisado, concordo. (e aqui está um exemplo especifico, era isto a que me referia na análise ao AHF)
+    MIF analisado, concordo.
+    PF analisado, concordo. Alteração a fazer: na segunda frase do segundo paragrafo, corrigir a frase que está mal escrita
+
+
+
+
+
+Gonçalo Cerveira
+  Code Smells
+    Code smell: Speculative Generality
+    Concordo. - Bruno David
+
+    Code smell: Dead Code
+    Review: Este método está a ser usado por isso não é dead code. - Rafael Mira
+    Review: Está a ser usado na classe abstrata GPCalendarBase.java no método getActivities que, pode ser utilizado pelas suas subClasses. - Rafael Mira
+
+    Code smell: Long Method
+    Review: Concordo com o code smell e com a solução proposta. - Rafael Mira
+    Review: Concordo, parece-me bem. - Mafalda Batalha
+    
+  Patterns
+    Pattern: State
+    Review: Concordo. - Rafael Mira
+
+    Pattern: Facade
+    Review: Concordo, acho que está bem identificado. - Rafael Mira
+
+    Pattern: Facade
+    Review: Concordo - Vasco Malta
+    
+   Métricas
+    Revisto por: Bruno David 
+
+    Existem alguns erros ortográficos e problemas no que toca à explicação, que devia melhor.
+    As metrics inicialmente tornam-se um pouco confusas de perceber, devido à noção que é preciso ter de package, mas, depois na zona onde são discutidos os valores obtidos no projeto, torna-se compreensível. Provavelmente, esses exemplos deveriam estar junto à explicação de cada metric, para melhor compreensão.
+    A discussão dos valores obtidos parece-me bem, tendo apenas a apontar o seguinte:
+        em Ca, não percebi o 1º parágrafo (ambíguo?)
+        as restantes sofrem do mesmo problema apontado sobre os erros e explicação.
+
+    (Alterações efetuadas de acordo com a Review - Gonçalo Cerveira)
+
+
+
+
+
+Mafalda Batalha
+  Code Smells
+    Code Smell: Dead Code
+    Review: Concordo. - Bruno David
+    Review: Concordo com este code smell pela mesma razâo que tambem concordava com o code smell Dead Code achado pelo Bruno, pensando de igual forma que se poderia pensar e implementar uma funcionalidade que viesse a usar o tal método evitando assim eliminá-lo. - Vasco Malta
+
+    Code Smell: Speculative generality
+    Review: Não sendo um caso muito problemático, concordo que ter um switch apenas para uma possibilidade é excessivo. - Rafael Mira
+    Review: Só faz sentido se se estiver a pensar em extensibilidade e nesse caso é speculative generality. - Rafael Mira
+
+    Code Smell: Long Method
+    Review: Concordo com o code smell e com a solução proposta. - Rafael Mira
+    
+  Patterns
+    Pattern: Memento
+    Review: Concordo. - Rafael Mira
+
+    Pattern: Template Method
+    Review: Concordo. - Bruno David
+    Review: Concordo. - Vasco Malta
+
+    Pattern: Proxy
+    Review: Concordo, nada a acrescentar. - Gonçalo Cerveira
+    
+  Métricas
+    Revisto por: Vasco Malta
+
+    Uma vez que é possivel analisar classes e métodos através dos mecanismo de calculo de metricas do intellij penso que a primeira linha esteja encompleta ao dizer que a metrica permite calcular a metrica de um projeto. Talvez referindo em especifico ao nosso projeto em vez de um projeto qualquer no geral resolve-se.
+    Explicação do WMC: parece bem estruturada e de facil compreensão.
+    Explicação do OCavg: igual a explicação anterior tambem pareceu bem estruturada e de facil compreensão.
+    Explicação OCmax: a mesma opinião que tive das explicações anteriores.
+    Conclusão: concordo
+
+
+
+
+
+Rafel Mira
+  Code Smells
+     Code Smell: Speculative Generality
+     Review: Parece-me bem identificado. Diria apenas que talvez é melhor indicar uma solução para o problema que o code smell gera. - Bruno David
+     Review: Talvez a melhor seria interface segregation, para não gerar a implementação de uma interface que tem métodos não necessários. - Bruno David
+
+     Code Smell: Speculative Generality 
+     Review: Concordo com essa identificação até por eu mesmo ter identificado um code smell de igual tipo pela mesma razão. - Vasco Malta
+
+     Code Smell: Large Class 
+     Review: Concordo. Diria apenas para se adicionar uma ideia geral, não muito complexa, para solucionar o problema - Gonçalo Cerveira
+     Review: Solução escrita após review. - Rafael Mira
+  
+  Patterns
+     Pattern: Chain of Responsibility
+     Review: Parece-me bem. - Bruno David
+
+     Pattern: Iterator
+     Review: Não tenho bem a certeza se isto é considerado como iterator pattern (tendo em conta que não está a ser utilizado um iterator). - Mafalda Batalha
+     Review: Após a review concordou-se que era um padrão Iterator - Mafalda Batalha
+
+     Pattern: Template Method
+     Review: Concordo com a observação e com a justificação da mesma. - Gonçalo Cerveira 
+
+  Métricas
+     Revisto por Gonçalo Cerveira
+
+     Começando pelo ficheiro dos dados colecionados diria que a informação de dados encontra se completa, não sendo preciso adicionar nada extra. No entanto diria  
+     que a organização dos gráficos parece confusa, secalhar uma melhor separação dos graficos seria uma alteração positiva, sendo que durante a leitura e verificação de alguns graficos os titulos estavam em cima e em baixo e era dificil saber para que grafico e que o titulo era.
+
+     Em relação ao relatório das métricas, achei a explicação inicial muito importante e algo que os restantes membros do grupo deveriam implementar no relatório deles, com essa explicação consegui entender facilmente os parametros de avaliação da métrica e perceber a avaliação feita, de acordo com os valores colecionados. Gostei também de ter sido apresentado uma tabela de valores de referência que ajuda também a pessoa, que esta a ver o relatório, não só a compreender melhor o que é um valor positivo e um valor negativo no trabalho como também nos proprios parametros de avaliação.
+     Falando da parte dos valores observados, tirando uma desformatação do documento (Alguns titulos separados da página onde a explicação se encontra) diria que depois da explicação feita no inicío do relatório são feitas anotações simples e que são bastante perceptiveis, acreditando que não é necessário fazer alterações, acrescentando que achei muito positivo a análise de algumas classes que apesar de problemáticas, em termos de valores, não irão influnciar tanto como aparentam, em termos de problemas de software.
+
+     Documento das metrics alterado após a review. - Rafael Mira
+
+
+
+
+
+Vasco Malta
+  Code Smells
+     Code smell: Comments
+     Review: Concordo. Apenas algumas classes/interfaces estão comentadas e, mesmo as que estão comentadas, contêm informação muito vaga. - Rafael Mira
+     Review: Para além das classes/interfaces, a maioria dos seus métodos não têm qualquer comentário a explicar o que fazem. - Rafael Mira
+
+     Code Smell: Speculative Generality (alterado após review)
+     Review: Esta classe é abstrata e daí a razão por trás do método não estar implementado. Muitos desses métodos estão a ser implementados e utilizados posteriormente. - Mafalda Batalha
+
+     Code Smell: Data Class
+     Review: Concordo. As classes demonstradas apenas manipulam data - Gonçalo Cerveira
+  
+  Patterns
+     Pattern: Facade
+     Não concordo. Seria um facade pattern se existisse uma classe que “unia” todas as que identificaste. - Bruno David
+
+     Pattern: Singleton (a explicação foi alterada após a review)
+     Review: Não tenho a certeza se é de facto um singleton pattern, de qualquer forma penso que a explicação deve ser modificada. - Mafalda Batalha
+
+     Pattern: Decorator
+     Review: Diria que concrodo, mas diria que a explicação teria de ser melhorada. - Gonçalo Cerveira
+  
+  Métrica
+    Revisto por: Mafalda Batalha
+
+    O relatório, em geral, está claro e conciso, porém penso que a conclusão poderia ser fraseada
+    de forma diferente. A repetição de algumas palavras torna-a mais difícil de ler.
+
+    Na primeira frase, o excerto "[...] é possível verificar a não verificação de pelo menos [...]"
+    parece-me um pouco confuso. Uma alternativa seria "[...] é possível observar que não são verificadas
+    pelo menos 2 das [...]"
+
+    Penso que a segunda frase poderia ser dividida em duas e mudada um pouco de forma a não ter
+    a repetição "apresenta [...] apresenta [...] apresenta". Por exemplo, "Este projeto apresenta poucos comentários
+    comparativamente ao seu valor de LOC, sendo inferior a 30%. Existem, também, classes com tamanho
+    excessivo, como é possível observar na tabela apresentada onde o maior ficheiro contém 1053 linhas de
+    código (LOC) quando o tamanho recomendado, referido anteriormente, é de, no máximo, 400 linhas."

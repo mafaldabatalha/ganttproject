@@ -1,3 +1,5 @@
+Revisto por Vasco Malta
+
 Em relação ao use case diagram parece-me correto, não tenho nada a dizer.
 Em relação ao use case description penso ter encontrado alguns erros como por exemplo a repetição de informação ou de provavel distração na altura de escrever o codigo.
 Exemplo repetição:
