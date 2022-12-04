@@ -32,7 +32,7 @@
 								{
 									"_type": "UMLNameCompartmentView",
 									"_id": "AAAAAAGE2TYRSk8gGIk=",
-									"_parent": {
+									"_parent": { 
 										"$ref": "AAAAAAGE2TYRSk8fMFk="
 									},
 									"model": {
