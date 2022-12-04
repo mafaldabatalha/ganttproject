@@ -1,4 +1,4 @@
-Reviws dos use cases:
+Reviews dos use cases:
 
 Bruno David (Use case das Tarefas)
   Revisto por Gonçalo Cerveira
