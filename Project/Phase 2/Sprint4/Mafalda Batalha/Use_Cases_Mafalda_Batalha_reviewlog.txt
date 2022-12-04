@@ -1,0 +1,10 @@
+Em relação ao use case diagram parece-me correto, não tenho nada a dizer.
+Em relação ao use case description penso ter encontrado alguns erros como por exemplo a repetição de informação ou de provavel distração na altura de escrever o codigo.
+Exemplo repetição:
+  •	Reduzir separador – o utilizador reduz o tamanho do separador
+  • Ajustar separador – o utilizador ajusta a janela do separador aberto (Gantt ou Resources Chart)
+Exemplo distração:
+  •	Aumentar separador – o utilizador reduz o tamanho do separador
+  
+Tirnado essas repetições ou distrações, concordo com o resto da estruturação do documento e achei adequado o facto de não se repetir sempre a informação de qual o user
+principal uma vez que se tratam de varias user cases todas com o mesmo user principal.

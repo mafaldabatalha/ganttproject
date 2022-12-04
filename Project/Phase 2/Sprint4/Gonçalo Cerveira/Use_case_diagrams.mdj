@@ -4090,7 +4090,7 @@
 											"top": 819.5,
 											"width": 151,
 											"height": 13,
-											"text": "Select File"
+											"text": "Select Import File"
 										},
 										{
 											"_type": "LabelView",
@@ -4282,7 +4282,7 @@
 											"top": 739.5,
 											"width": 207,
 											"height": 13,
-											"text": "{Abstract} Display Export System"
+											"text": "Select Export File"
 										},
 										{
 											"_type": "LabelView",
@@ -4315,7 +4315,7 @@
 									"font": "Arial;13;0",
 									"left": 829,
 									"top": 732.5,
-									"width": 217.3525390625,
+									"width": 217,
 									"height": 25,
 									"stereotypeLabel": {
 										"$ref": "AAAAAAGE2SQ8xj3WlGg="
@@ -4477,11 +4477,11 @@
 												"$ref": "AAAAAAGE2SUkt1nlyNo="
 											},
 											"font": "Arial;13;1",
-											"left": 491.5,
+											"left": 492.5,
 											"top": 995.5,
-											"width": 173,
+											"width": 178,
 											"height": 13,
-											"text": "Export to Microsoft Projects"
+											"text": "Import via Microsoft Projects"
 										},
 										{
 											"_type": "LabelView",
@@ -4512,9 +4512,9 @@
 										}
 									],
 									"font": "Arial;13;0",
-									"left": 486.5,
+									"left": 487.5,
 									"top": 988.5,
-									"width": 184.078125,
+									"width": 189.14990234375,
 									"height": 25,
 									"stereotypeLabel": {
 										"$ref": "AAAAAAGE2SUkt1nmJFQ="
@@ -4614,7 +4614,7 @@
 							"containerChangeable": true,
 							"left": 448,
 							"top": 984,
-							"width": 260,
+							"width": 267,
 							"height": 35,
 							"nameCompartment": {
 								"$ref": "AAAAAAGE2SUkt1nlyNo="
@@ -4676,11 +4676,11 @@
 												"$ref": "AAAAAAGE2SUsh1t32TI="
 											},
 											"font": "Arial;13;1",
-											"left": 591.5,
+											"left": 592.5,
 											"top": 923.5,
-											"width": 116,
+											"width": 121,
 											"height": 13,
-											"text": "Export to *.csv File"
+											"text": "Import via *.csv File"
 										},
 										{
 											"_type": "LabelView",
@@ -4711,9 +4711,9 @@
 										}
 									],
 									"font": "Arial;13;0",
-									"left": 586.5,
+									"left": 587.5,
 									"top": 916.5,
-									"width": 127.03173828125,
+									"width": 132.103515625,
 									"height": 25,
 									"stereotypeLabel": {
 										"$ref": "AAAAAAGE2SUsh1t4ZZ0="
@@ -4813,7 +4813,7 @@
 							"containerChangeable": true,
 							"left": 560,
 							"top": 912,
-							"width": 179,
+							"width": 186,
 							"height": 35,
 							"nameCompartment": {
 								"$ref": "AAAAAAGE2SUsh1t32TI="
@@ -4857,7 +4857,7 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": 545,
+									"left": 547,
 									"top": 884,
 									"height": 13,
 									"alpha": 1.5707963267948966,
@@ -4878,7 +4878,7 @@
 									},
 									"visible": null,
 									"font": "Arial;13;0",
-									"left": 538,
+									"left": 540,
 									"top": 897,
 									"height": 13,
 									"alpha": 1.5707963267948966,
@@ -4899,7 +4899,7 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": 560,
+									"left": 562,
 									"top": 857,
 									"height": 13,
 									"alpha": -1.5707963267948966,
@@ -4918,7 +4918,7 @@
 								"$ref": "AAAAAAGE2SUsh1t2lzk="
 							},
 							"lineStyle": 1,
-							"points": "616:911;491:843",
+							"points": "618:911;492:843",
 							"showVisibility": true,
 							"nameLabel": {
 								"$ref": "AAAAAAGE2SXoRomCYLc="
@@ -4951,7 +4951,7 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": 504,
+									"left": 506,
 									"top": 915,
 									"height": 13,
 									"alpha": 1.5707963267948966,
@@ -4972,7 +4972,7 @@
 									},
 									"visible": null,
 									"font": "Arial;13;0",
-									"left": 492,
+									"left": 494,
 									"top": 923,
 									"height": 13,
 									"alpha": 1.5707963267948966,
@@ -4993,7 +4993,7 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": 529,
+									"left": 531,
 									"top": 898,
 									"height": 13,
 									"alpha": -1.5707963267948966,
@@ -5012,7 +5012,7 @@
 								"$ref": "AAAAAAGE2SUkt1nkpLo="
 							},
 							"lineStyle": 1,
-							"points": "565:983;470:843",
+							"points": "568:983;471:843",
 							"showVisibility": true,
 							"nameLabel": {
 								"$ref": "AAAAAAGE2SXzFo0ay+M="
@@ -5063,11 +5063,11 @@
 												"$ref": "AAAAAAGE2SYin5leSu8="
 											},
 											"font": "Arial;13;1",
-											"left": 297.5,
+											"left": 298.5,
 											"top": 1043.5,
-											"width": 163,
+											"width": 169,
 											"height": 13,
-											"text": "Import to GanttProject File"
+											"text": "Import via GanttProject File"
 										},
 										{
 											"_type": "LabelView",
@@ -5098,9 +5098,9 @@
 										}
 									],
 									"font": "Arial;13;0",
-									"left": 292.5,
+									"left": 293.5,
 									"top": 1036.5,
-									"width": 173.95361328125,
+									"width": 179.75537109375,
 									"height": 25,
 									"stereotypeLabel": {
 										"$ref": "AAAAAAGE2SYin5lf9t4="
@@ -5200,7 +5200,7 @@
 							"containerChangeable": true,
 							"left": 256,
 							"top": 1032,
-							"width": 246,
+							"width": 254,
 							"height": 35,
 							"nameCompartment": {
 								"$ref": "AAAAAAGE2SYin5leSu8="
@@ -5262,11 +5262,11 @@
 												"$ref": "AAAAAAGE2SYoD5rbqhM="
 											},
 											"font": "Arial;13;1",
-											"left": 240,
+											"left": 241,
 											"top": 963.5,
-											"width": 118,
+											"width": 124,
 											"height": 13,
-											"text": "Import to iCalendar"
+											"text": "Import via iCalendar"
 										},
 										{
 											"_type": "LabelView",
@@ -5297,9 +5297,9 @@
 										}
 									],
 									"font": "Arial;13;0",
-									"left": 235,
+									"left": 236,
 									"top": 956.5,
-									"width": 129.17724609375,
+									"width": 134.97900390625,
 									"height": 25,
 									"stereotypeLabel": {
 										"$ref": "AAAAAAGE2SYoD5rcf58="
@@ -5399,7 +5399,7 @@
 							"containerChangeable": true,
 							"left": 208,
 							"top": 952,
-							"width": 182,
+							"width": 190,
 							"height": 35,
 							"nameCompartment": {
 								"$ref": "AAAAAAGE2SYoD5rbqhM="
@@ -5461,11 +5461,11 @@
 												"$ref": "AAAAAAGE2SYth5xtcJI="
 											},
 											"font": "Arial;13;1",
-											"left": 214,
+											"left": 215.5,
 											"top": 891.5,
-											"width": 110,
+											"width": 115,
 											"height": 13,
-											"text": "Import to *.txt File"
+											"text": "Import via *.txt File"
 										},
 										{
 											"_type": "LabelView",
@@ -5496,9 +5496,9 @@
 										}
 									],
 									"font": "Arial;13;0",
-									"left": 209,
+									"left": 210.5,
 									"top": 884.5,
-									"width": 120.5,
+									"width": 126.3017578125,
 									"height": 25,
 									"stereotypeLabel": {
 										"$ref": "AAAAAAGE2SYth5xukjY="
@@ -5598,7 +5598,7 @@
 							"containerChangeable": true,
 							"left": 184,
 							"top": 880,
-							"width": 170,
+							"width": 178,
 							"height": 35,
 							"nameCompartment": {
 								"$ref": "AAAAAAGE2SYth5xtcJI="
@@ -5642,7 +5642,7 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": 357,
+									"left": 359,
 									"top": 840,
 									"height": 13,
 									"alpha": 1.5707963267948966,
@@ -5663,7 +5663,7 @@
 									},
 									"visible": null,
 									"font": "Arial;13;0",
-									"left": 352,
+									"left": 354,
 									"top": 826,
 									"height": 13,
 									"alpha": 1.5707963267948966,
@@ -5684,7 +5684,7 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": 368,
+									"left": 370,
 									"top": 869,
 									"height": 13,
 									"alpha": -1.5707963267948966,
@@ -5703,7 +5703,7 @@
 								"$ref": "AAAAAAGE2SYth5xsohk="
 							},
 							"lineStyle": 1,
-							"points": "316:879;411:843",
+							"points": "319:879;412:843",
 							"showVisibility": true,
 							"nameLabel": {
 								"$ref": "AAAAAAGE2SbY7cTMpKs="
@@ -5736,7 +5736,7 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": 367,
+									"left": 369,
 									"top": 879,
 									"height": 13,
 									"alpha": 1.5707963267948966,
@@ -5757,7 +5757,7 @@
 									},
 									"visible": null,
 									"font": "Arial;13;0",
-									"left": 357,
+									"left": 359,
 									"top": 868,
 									"height": 13,
 									"alpha": 1.5707963267948966,
@@ -5778,7 +5778,7 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": 388,
+									"left": 390,
 									"top": 902,
 									"height": 13,
 									"alpha": -1.5707963267948966,
@@ -5797,7 +5797,7 @@
 								"$ref": "AAAAAAGE2SYoD5ra0Vo="
 							},
 							"lineStyle": 1,
-							"points": "318:951;438:843",
+							"points": "322:951;439:843",
 							"showVisibility": true,
 							"nameLabel": {
 								"$ref": "AAAAAAGE2SbgRcdTiZE="
@@ -5830,8 +5830,8 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": 403,
-									"top": 925,
+									"left": 405,
+									"top": 926,
 									"height": 13,
 									"alpha": 1.5707963267948966,
 									"distance": 15,
@@ -5851,8 +5851,8 @@
 									},
 									"visible": null,
 									"font": "Arial;13;0",
-									"left": 389,
-									"top": 920,
+									"left": 391,
+									"top": 921,
 									"height": 13,
 									"alpha": 1.5707963267948966,
 									"distance": 30,
@@ -5872,8 +5872,8 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": 432,
-									"top": 936,
+									"left": 434,
+									"top": 935,
 									"height": 13,
 									"alpha": -1.5707963267948966,
 									"distance": 15,
@@ -5891,7 +5891,7 @@
 								"$ref": "AAAAAAGE2SYin5ldPhQ="
 							},
 							"lineStyle": 1,
-							"points": "384:1031;452:843",
+							"points": "388:1031;452:843",
 							"showVisibility": true,
 							"nameLabel": {
 								"$ref": "AAAAAAGE2SbqZcpDfqs="
@@ -6821,11 +6821,11 @@
 												"$ref": "AAAAAAGE2WgP1qHN/rA="
 											},
 											"font": "Arial;13;1",
-											"left": 799.5,
+											"left": 800.5,
 											"top": 915.5,
-											"width": 116,
+											"width": 121,
 											"height": 13,
-											"text": "Export to *.csv File"
+											"text": "Import via *.csv File"
 										},
 										{
 											"_type": "LabelView",
@@ -6856,9 +6856,9 @@
 										}
 									],
 									"font": "Arial;13;0",
-									"left": 794.5,
+									"left": 795.5,
 									"top": 908.5,
-									"width": 127.03173828125,
+									"width": 132.103515625,
 									"height": 25,
 									"stereotypeLabel": {
 										"$ref": "AAAAAAGE2WgP1qHOutI="
@@ -6958,7 +6958,7 @@
 							"containerChangeable": true,
 							"left": 768,
 							"top": 904,
-							"width": 179,
+							"width": 186,
 							"height": 35,
 							"nameCompartment": {
 								"$ref": "AAAAAAGE2WgP1qHN/rA="
@@ -7020,11 +7020,11 @@
 												"$ref": "AAAAAAGE2Wgw1qif6dw="
 											},
 											"font": "Arial;13;1",
-											"left": 891.5,
+											"left": 892.5,
 											"top": 995.5,
-											"width": 173,
+											"width": 178,
 											"height": 13,
-											"text": "Export to Microsoft Projects"
+											"text": "Import via Microsoft Projects"
 										},
 										{
 											"_type": "LabelView",
@@ -7055,9 +7055,9 @@
 										}
 									],
 									"font": "Arial;13;0",
-									"left": 886.5,
+									"left": 887.5,
 									"top": 988.5,
-									"width": 184.078125,
+									"width": 189.14990234375,
 									"height": 25,
 									"stereotypeLabel": {
 										"$ref": "AAAAAAGE2Wgw1qigKYQ="
@@ -7157,7 +7157,7 @@
 							"containerChangeable": true,
 							"left": 848,
 							"top": 984,
-							"width": 260,
+							"width": 267,
 							"height": 35,
 							"nameCompartment": {
 								"$ref": "AAAAAAGE2Wgw1qif6dw="
@@ -7201,7 +7201,7 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": 883,
+									"left": 884,
 									"top": 820,
 									"height": 13,
 									"alpha": 1.5707963267948966,
@@ -7222,7 +7222,7 @@
 									},
 									"visible": null,
 									"font": "Arial;13;0",
-									"left": 869,
+									"left": 870,
 									"top": 814,
 									"height": 13,
 									"alpha": 1.5707963267948966,
@@ -7243,7 +7243,7 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": 910,
+									"left": 911,
 									"top": 833,
 									"height": 13,
 									"alpha": -1.5707963267948966,
@@ -7262,7 +7262,7 @@
 								"$ref": "AAAAAAGE2WgP1qHMXxM="
 							},
 							"lineStyle": 1,
-							"points": "865:903;929:763",
+							"points": "868:903;929:763",
 							"showVisibility": true,
 							"nameLabel": {
 								"$ref": "AAAAAAGE2Wi1StgGhSY="
@@ -7295,7 +7295,7 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": 942,
+									"left": 944,
 									"top": 869,
 									"height": 13,
 									"alpha": 1.5707963267948966,
@@ -7316,8 +7316,8 @@
 									},
 									"visible": null,
 									"font": "Arial;13;0",
-									"left": 927,
-									"top": 871,
+									"left": 929,
+									"top": 872,
 									"height": 13,
 									"alpha": 1.5707963267948966,
 									"distance": 30,
@@ -7337,7 +7337,7 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": 971,
+									"left": 973,
 									"top": 864,
 									"height": 13,
 									"alpha": -1.5707963267948966,
@@ -7356,7 +7356,7 @@
 								"$ref": "AAAAAAGE2Wgw1qiemfg="
 							},
 							"lineStyle": 1,
-							"points": "974:983;940:763",
+							"points": "978:983;940:763",
 							"showVisibility": true,
 							"nameLabel": {
 								"$ref": "AAAAAAGE2WjWm9rMTdc="
@@ -8520,7 +8520,7 @@
 					"_parent": {
 						"$ref": "AAAAAAGE2R/ylgSzdGg="
 					},
-					"name": "Select File",
+					"name": "Select Import File",
 					"ownedElements": [
 						{
 							"_type": "UMLExtend",
@@ -8543,7 +8543,7 @@
 					"_parent": {
 						"$ref": "AAAAAAGE2R/ylgSzdGg="
 					},
-					"name": "{Abstract} Display Export System",
+					"name": "Select Export File",
 					"ownedElements": [
 						{
 							"_type": "UMLExtend",
@@ -8567,7 +8567,7 @@
 					"_parent": {
 						"$ref": "AAAAAAGE2R/ylgSzdGg="
 					},
-					"name": "Export to Microsoft Projects",
+					"name": "Import via Microsoft Projects",
 					"ownedElements": [
 						{
 							"_type": "UMLGeneralization",
@@ -8616,7 +8616,7 @@
 					"_parent": {
 						"$ref": "AAAAAAGE2R/ylgSzdGg="
 					},
-					"name": "Export to *.csv File",
+					"name": "Import via *.csv File",
 					"ownedElements": [
 						{
 							"_type": "UMLGeneralization",
@@ -8665,7 +8665,7 @@
 					"_parent": {
 						"$ref": "AAAAAAGE2R/ylgSzdGg="
 					},
-					"name": "Import to GanttProject File",
+					"name": "Import via GanttProject File",
 					"ownedElements": [
 						{
 							"_type": "UMLGeneralization",
@@ -8688,7 +8688,7 @@
 					"_parent": {
 						"$ref": "AAAAAAGE2R/ylgSzdGg="
 					},
-					"name": "Import to iCalendar",
+					"name": "Import via iCalendar",
 					"ownedElements": [
 						{
 							"_type": "UMLGeneralization",
@@ -8711,7 +8711,7 @@
 					"_parent": {
 						"$ref": "AAAAAAGE2R/ylgSzdGg="
 					},
-					"name": "Import to *.txt File",
+					"name": "Import via *.txt File",
 					"ownedElements": [
 						{
 							"_type": "UMLGeneralization",
