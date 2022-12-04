@@ -1,4 +1,4 @@
-Revito por Gonçalo Cerveira
+Revisto por Gonçalo Cerveira
 
 No diagram:
   - Diria que podias juntar todos os use cases de forma a podermos ver todas as possibilidades ao mesmo tempo
