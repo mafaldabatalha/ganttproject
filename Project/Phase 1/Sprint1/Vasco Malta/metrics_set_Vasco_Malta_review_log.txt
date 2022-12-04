@@ -1,0 +1,14 @@
+Revisto por: Mafalda Batalha
+
+O relatório, em geral, está claro e conciso, porém penso que a conclusão poderia ser fraseada
+de forma diferente. A repetição de algumas palavras torna-a mais difícil de ler.
+
+Na primeira frase, o excerto "[...] é possível verificar a não verificação de pelo menos [...]"
+parece-me um pouco confuso. Uma alternativa seria "[...] é possível observar que não são verificadas
+pelo menos 2 das [...]"
+
+Penso que a segunda frase poderia ser dividida em duas e mudada um pouco de forma a não ter
+a repetição "apresenta [...] apresenta [...] apresenta". Por exemplo, "Este projeto apresenta poucos comentários
+comparativamente ao seu valor de LOC, sendo inferior a 30%. Existem, também, classes com tamanho
+excessivo, como é possível observar na tabela apresentada onde o maior ficheiro contém 1053 linhas de
+código (LOC) quando o tamanho recomendado, referido anteriormente, é de, no máximo, 400 linhas."
