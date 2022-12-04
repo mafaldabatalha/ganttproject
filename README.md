@@ -8,6 +8,8 @@
 
 61696 - Gonçalo Cerveira - id: GoncaloCerveira
 
+https://www.youtube.com/watch?v=_NtY4wWpveE&ab_channel=RafaelMira
+
 GanttProject
 ============
 [![Build Status] (https://travis-ci.org/bardsoftware/ganttproject.svg?branch=master)](https://travis-ci.org/bardsoftware/ganttproject)
