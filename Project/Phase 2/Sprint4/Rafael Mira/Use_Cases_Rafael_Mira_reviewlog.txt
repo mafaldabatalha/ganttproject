@@ -1,0 +1,13 @@
+Revisto por: Bruno David
+
+User Stories: na minha opinião, todas as user stories deviam seguir o mesmo padrão de escrita.
+              de resto, parece-me bem.
+
+Use Cases Diagrams: parecem-me bem. Nada a apontar.
+
+Use Cases Description: Adicionar Recurso - dira que as pré-condições deviam incluir que o nome dado ao recurso não deve de existir
+                                           (mais por uma questão de compreensão da tabela de recursos).
+                       Eliminar Recurso - nas pós-condições devia incluir que as tarefas associadas a esse recurso deixam de o estar.
+                       Enviar E-mail - nas pós-condições é enviado e não colado.
+                       
+                       De resto parece-me tudo bem.
