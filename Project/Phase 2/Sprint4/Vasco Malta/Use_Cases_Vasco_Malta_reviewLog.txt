@@ -1,0 +1,11 @@
+Revisto por: Mafalda Batalha
+
+No diagrama de use cases, cada use case é suposto representar uma ação que o ator pode fazer no sistema e,
+por isso, os nomes deviam de começar com verbos. Em vez de teres só "Node" deveria de ser, por exemplo, "Ver Node".
+Em vez de teres um use case "ver" que inclui "diagrama PERT", penso que deveria de ser apenas um use case
+"Ver diagrama PERT".
+
+Metade do ator está dentro da caixa que representa o sistema o que não pode acontecer, o ator deve estar fora
+da caixa.
+
+Acho que a parte dos use cases relacionados ao pop up poderiam ser modificados, existe alguma informação desnecessária.
